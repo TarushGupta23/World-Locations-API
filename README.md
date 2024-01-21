@@ -12,8 +12,12 @@ Welcome to the World-Locations-API! This API provides information about continen
   - [Get Continents](#getcontinents)
   - [Get Countries by Continent](#getcontinentidcountries)
   - [Get Country by Code](#getcountryid)
+  - [Get Country Capital](#getcountrycapital)
   - [Get States by Country](#getcountryidstates)
   - [Get Cities by State](#getstateidcities)
+  - [Get Locations starting with](#startswith)
+  - [Get Locations ending with](#endswith)
+  - [Get Locations containing](#contains)
   - [Validate Location](#postlocation)
 
 ## Getting Started
@@ -110,6 +114,17 @@ The database is now set up with initial data.
      }
      ```
 
+### Get Capital of a Country <a name="getcountrycapital"></a>
+- **Endpoint**: `/country/:id/capital`
+- **Method**: `GET`
+- **Description**: Get capital city of a country by its country code. Replace `:id` with country code
+   - **Example Response**:
+     ```json
+     {
+       "capital": "New Delhi"
+     }
+     ```
+
 ### Get States by Country <a name="getcountryidstates"></a>
 - **Endpoint**: `/country/:id/states`
 - **Method**: `GET`
@@ -139,6 +154,21 @@ The database is now set up with initial data.
       }
      ]
      ```
+
+### Get Locations Starting with <a name="startswith"></a>
+- **Endpoint**: `/starts-with/:char`
+- **Method**: `GET`
+- **Description**: Get all locations which starts with given character sequence. replace `:char` with character sequence, use **_** to simply get list of all locations' name
+
+### Get Locations Ending with <a name="endswith"></a>
+- **Endpoint**: `/ends-with/:char`
+- **Method**: `GET`
+- **Description**: Get all locations which ends with given character sequence. replace `:char` with character sequence, use **_** to simply get list of all locations' name
+
+### Get Locations Containing <a name="contains"></a>
+- **Endpoint**: `/contains/:char`
+- **Method**: `GET`
+- **Description**: Get all locations which contains given character sequence. replace `:char` with character sequence, use **_** to simply get list of all locations' name
 
 ### Validate Location <a name="postlocation"></a>
 - **Endpoint**: `/location`
