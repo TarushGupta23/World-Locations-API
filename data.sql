@@ -12,7 +12,6 @@ CREATE TABLE countries (
     capital VARCHAR(255),
     FOREIGN KEY (continent_code) REFERENCES continents(continent_code)
 );
-
 -- creating table of states
 CREATE TABLE states (
     state_id varchar(20) PRIMARY KEY,
