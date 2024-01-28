@@ -1,33 +1,4 @@
 
-CREATE TABLE continents (
-    continent_code varchar(20) PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
-);
-
--- creating table of countries
-CREATE TABLE countries (
-    country_code varchar(20) PRIMARY KEY,
-    continent_code varchar(20),
-    name VARCHAR(255) NOT NULL,
-    capital VARCHAR(255),
-    FOREIGN KEY (continent_code) REFERENCES continents(continent_code)
-);
-
--- creating table of states
-CREATE TABLE states (
-    state_id varchar(20) PRIMARY KEY,
-    country_code varchar(20),
-    name VARCHAR(255) NOT NULL,
-    FOREIGN KEY (country_code) REFERENCES countries(country_code)
-);
-
--- creating table of cities
-CREATE TABLE cities (
-    city_id varchar(20) PRIMARY KEY,
-    state_id varchar(20),
-    name VARCHAR(255) NOT NULL,
-    FOREIGN KEY (state_id) REFERENCES states(state_id)
-);
 
 -- afganistan
 
@@ -1152,4 +1123,2804 @@ INSERT INTO cities VALUES
 ("BZ-TOL-P", "BZ-TOL", "Punta Gorda"),
 ("BZ-TOL-S", "BZ-TOL", "San Antonio");
 
+-- benin
 
+INSERT INTO countries VALUES 
+("BJ", "AF", "Benin", "Porto-Novo");
+
+INSERT INTO states VALUES
+("BJ-AL", "BJ", "Alibori"),
+("BJ-AK", "BJ", "Atakora"),
+("BJ-AT", "BJ", "Atlantique"),
+("BJ-BO", "BJ", "Borgou"),
+("BJ-CO", "BJ", "Collines"),
+("BJ-DO", "BJ", "Donga"),
+("BJ-LI", "BJ", "Littoral"),
+("BJ-MO", "BJ", "Mono"),
+("BJ-OU", "BJ", "Ouémé"),
+("BJ-PL", "BJ", "Plateau"),
+("BJ-ZO", "BJ", "Zou");
+
+INSERT INTO cities VALUES
+("BJ-AL-KA", "BJ-AL", "Kandi"),
+("BJ-AL-SV", "BJ-AL", "Ségbana"),
+("BJ-AL-GB", "BJ-AL", "Gbérérou"),
+("BJ-AL-MO", "BJ-AL", "Malanville"),
+("BJ-AL-BI", "BJ-AL", "Birni-Lafia"),
+("BJ-AK-NB", "BJ-AK", "Natitingou"),
+("BJ-AK-TA", "BJ-AK", "Tanguiéta"),
+("BJ-AK-KO", "BJ-AK", "Kouandé"),
+("BJ-AK-KI", "BJ-AK", "Kérou"),
+("BJ-AK-BI", "BJ-AK", "Boukoumbé"),
+("BJ-AT-CT", "BJ-AT", "Cotonou"),
+("BJ-AT-OL", "BJ-AT", "Ouidah"),
+("BJ-AT-PO", "BJ-AT", "Porto-Novo"),
+("BJ-AT-TO", "BJ-AT", "Tori-Bossito"),
+("BJ-AT-GR", "BJ-AT", "Grand-Popo"),
+("BJ-BO-PA", "BJ-BO", "Parakou"),
+("BJ-BO-PE", "BJ-BO", "Pèrèrè"),
+("BJ-BO-TO", "BJ-BO", "Tchaourou"),
+("BJ-BO-NA", "BJ-BO", "Nikki"),
+("BJ-BO-BE", "BJ-BO", "Bembèrèkè"),
+("BJ-CO-BO", "BJ-CO", "Bohicon"),
+("BJ-CO-SA", "BJ-CO", "Savalou"),
+("BJ-CO-GL", "BJ-CO", "Glazoué"),
+("BJ-CO-DA", "BJ-CO", "Dassa-Zoumè"),
+("BJ-CO-OU", "BJ-CO", "Ouinhi"),
+("BJ-DO-DO", "BJ-DO", "Djougou"),
+("BJ-DO-OH", "BJ-DO", "Ouaké"),
+("BJ-DO-BO", "BJ-DO", "Bassila"),
+("BJ-DO-PE", "BJ-DO", "Péhonko"),
+("BJ-DO-KE", "BJ-DO", "Kérou"),
+("BJ-LI-CP", "BJ-LI", "Cotonou"),
+("BJ-LI-GR", "BJ-LI", "Grand-Popo"),
+("BJ-LI-OO", "BJ-LI", "Ouidah"),
+("BJ-LI-TO", "BJ-LI", "Tori-Bossito"),
+("BJ-LI-GB", "BJ-LI", "Godomey"),
+("BJ-LI-LO", "BJ-LI", "Lokossa"),
+("BJ-MO-LO", "BJ-MO", "Lokossa"),
+("BJ-MO-ON", "BJ-MO", "Ouidah"),
+("BJ-MO-PO", "BJ-MO", "Pobè"),
+("BJ-MO-CA", "BJ-MO", "Cotonou"),
+("BJ-MO-GL", "BJ-MO", "Golmè"),
+("BJ-OU-PO", "BJ-OU", "Porto-Novo"),
+("BJ-OU-SA", "BJ-OU", "Sakété"),
+("BJ-OU-AD", "BJ-OU", "Adjarra"),
+("BJ-OU-AG", "BJ-OU", "Aguegues"),
+("BJ-OU-AL", "BJ-OU", "Allada"),
+("BJ-OU-AK", "BJ-OU", "Akpro-Missérété"),
+("BJ-PL-AL", "BJ-PL", "Allada"),
+("BJ-PL-SA", "BJ-PL", "Savalou"),
+("BJ-PL-DO", "BJ-PL", "Donsin"),
+("BJ-PL-YE", "BJ-PL", "Yé"),
+("BJ-PL-GB", "BJ-PL", "Godomey"),
+("BJ-PL-GL", "BJ-PL", "Glazoué"),
+("BJ-PL-AD", "BJ-PL", "Adja-Ouèrè"),
+("BJ-PL-TO", "BJ-PL", "Tori-Bossito"),
+("BJ-ZO-AB", "BJ-ZO", "Abomey"),
+("BJ-ZO-BO", "BJ-ZO", "Bohicon"),
+("BJ-ZO-ZO", "BJ-ZO", "Zogbodomey"),
+("BJ-ZO-DA", "BJ-ZO", "Dassa-Zoumè"),
+("BJ-ZO-OU", "BJ-ZO", "Ouinhi"),
+("BJ-ZO-GL", "BJ-ZO", "Glazoué"),
+("BJ-ZO-BA", "BJ-ZO", "Bassila");
+
+-- bolivia
+
+INSERT INTO countries VALUES 
+("BO", "SA", "Bolivia", "Sucre");
+
+INSERT INTO states VALUES
+("BO-B", "BO", "Beni"),
+("BO-C", "BO", "Cochabamba"),
+("BO-H", "BO", "Chuquisaca"),
+("BO-L", "BO", "La Paz"),
+("BO-N", "BO", "Pando"),
+("BO-O", "BO", "Oruro"),
+("BO-P", "BO", "Potosí"),
+("BO-S", "BO", "Santa Cruz"),
+("BO-T", "BO", "Tarija");
+
+INSERT INTO cities VALUES
+("BO-B-T", "BO-B", "Trinidad"),
+("BO-B-R", "BO-B", "Riberalta"),
+("BO-B-G", "BO-B", "Guayaramerín"),
+("BO-B-S", "BO-B", "San Borja"),
+("BO-B-RU", "BO-B", "Rurrenabaque"),
+("BO-C-C", "BO-C", "Cochabamba"),
+("BO-C-Q", "BO-C", "Quillacollo"),
+("BO-C-S", "BO-C", "Sacaba"),
+("BO-C-T", "BO-C", "Tiquipaya"),
+("BO-C-P", "BO-C", "Punata"),
+("BO-C-CB", "BO-C", "Cliza"),
+("BO-H-S", "BO-H", "Sucre"),
+("BO-H-Y", "BO-H", "Yotala"),
+("BO-H-T", "BO-H", "Tarabuco"),
+("BO-H-P", "BO-H", "Potosí"),
+("BO-H-M", "BO-H", "Montero"),
+("BO-H-YA", "BO-H", "Yamparáez"),
+("BO-H-Z", "BO-H", "Zudáñez"),
+("BO-H-AZ", "BO-H", "Azurduy"),
+("BO-N-C", "BO-N", "Cobija"),
+("BO-N-F", "BO-N", "Filadelfia"),
+("BO-N-B", "BO-N", "Bolpebra"),
+("BO-N-R", "BO-N", "Reyes"),
+("BO-N-G", "BO-N", "Guayaramerín"),
+("BO-O-O", "BO-O", "Oruro"),
+("BO-O-H", "BO-O", "Huanuni"),
+("BO-O-C", "BO-O", "Caracollo"),
+("BO-O-S", "BO-O", "Soracachi"),
+("BO-O-CU", "BO-O", "Curahuara de Carangas"),
+("BO-O-CA", "BO-O", "Challapata"),
+("BO-P-P", "BO-P", "Potosí"),
+("BO-P-L", "BO-P", "Llallagua"),
+("BO-P-U", "BO-P", "Uyuni"),
+("BO-P-T", "BO-P", "Tupiza"),
+("BO-P-C", "BO-P", "Colquechaca"),
+("BO-P-CU", "BO-P", "Cotagaita"),
+("BO-S-SC", "BO-S", "Santa Cruz de la Sierra"),
+("BO-S-M", "BO-S", "Montero"),
+("BO-S-W", "BO-S", "Warnes"),
+("BO-S-T", "BO-S", "Tarija"),
+("BO-S-YA", "BO-S", "Yacuiba"),
+("BO-S-CO", "BO-S", "Cochabamba"),
+("BO-S-V", "BO-S", "Villa Tunari");
+
+-- Bosnia and herzegovina
+
+INSERT INTO countries VALUES 
+("BA", "EU", "Bosnia and Herzegovina", "Sarajevo");
+
+INSERT INTO states VALUES
+("BA-BIH", "BA", "Federation of Bosnia and Herzegovina"),
+("BA-RS", "BA", "Republika Srpska"),
+("BA-BRC", "BA", "Brčko District");
+
+INSERT INTO cities VALUES
+("BA-BIH-SR", "BA-BIH", "Sarajevo"),
+("BA-BIH-TO", "BA-BIH", "Tuzla"),
+("BA-BIH-BN", "BA-BIH", "Banja Luka"),
+("BA-BIH-MO", "BA-BIH", "Mostar"),
+("BA-BIH-BR", "BA-BIH", "Bijeljina"),
+("BA-BIH-ZA", "BA-BIH", "Zenica"),
+("BA-BIH-BI", "BA-BIH", "Bihac"),
+("BA-BIH-CA", "BA-BIH", "Cazin"),
+("BA-BIH-GR", "BA-BIH", "Gorazde"),
+("BA-BIH-NO", "BA-BIH", "Novi Grad"),
+("BA-RS-BL", "BA-RS", "Banja Luka"),
+("BA-RS-DO", "BA-RS", "Doboj"),
+("BA-RS-FO", "BA-RS", "Foča"),
+("BA-RS-PA", "BA-RS", "Pale"),
+("BA-RS-TJ", "BA-RS", "Trebinje"),
+("BA-RS-BP", "BA-RS", "Bijeljina"),
+("BA-RS-PE", "BA-RS", "Prijedor"),
+("BA-RS-ZV", "BA-RS", "Zvornik"),
+("BA-RS-BJ", "BA-RS", "Bileca"),
+("BA-BRC-BR", "BA-BRC", "Brčko"),
+("BA-BRC-GO", "BA-BRC", "Gračanica"),
+("BA-BRC-LO", "BA-BRC", "Lukavac"),
+("BA-BRC-OR", "BA-BRC", "Orasje"),
+("BA-BRC-BP", "BA-BRC", "Bijeljina"),
+("BA-BRC-DO", "BA-BRC", "Doboj"),
+("BA-BRC-BA", "BA-BRC", "Bosanski Brod"),
+("BA-BRC-MO", "BA-BRC", "Modrica"),
+("BA-BRC-TE", "BA-BRC", "Tesanj"),
+("BA-BRC-VI", "BA-BRC", "Vukosavlje");
+
+-- Botswana
+
+INSERT INTO countries VALUES 
+("BW", "AF", "Botswana", "Gaborone");
+
+INSERT INTO states VALUES
+("BW-CE", "BW", "Central"),
+("BW-GH", "BW", "Ghanzi"),
+("BW-KG", "BW", "Kgalagadi"),
+("BW-KL", "BW", "Kgatleng"),
+("BW-KW", "BW", "Kweneng"),
+("BW-NE", "BW", "North-East"),
+("BW-NW", "BW", "North-West"),
+("BW-SE", "BW", "South-East"),
+("BW-SO", "BW", "Southern");
+
+INSERT INTO cities VALUES
+("BW-CE-GA", "BW-CE", "Gaborone"),
+("BW-CE-MO", "BW-CE", "Mochudi"),
+("BW-CE-RA", "BW-CE", "Ramotswa"),
+("BW-GH-GH", "BW-GH", "Ghanzi"),
+("BW-GH-CK", "BW-GH", "Charleshill"),
+("BW-KG-KA", "BW-KG", "Kang"),
+("BW-KG-TS", "BW-KG", "Tshane"),
+("BW-KG-KI", "BW-KG", "Khawa"),
+("BW-KL-GA", "BW-KL", "Gabane"),
+("BW-KL-MO", "BW-KL", "Molepolole"),
+("BW-KL-KA", "BW-KL", "Kanye"),
+("BW-KW-MA", "BW-KW", "Mabalane"),
+("BW-KW-GA", "BW-KW", "Gabele"),
+("BW-KW-SH", "BW-KW", "Shoshong"),
+("BW-NE-FR", "BW-NE", "Francistown"),
+("BW-NE-MA", "BW-NE", "Masunga"),
+("BW-NE-NX", "BW-NE", "Nata"),
+("BW-NW-MO", "BW-NW", "Maun"),
+("BW-NW-SE", "BW-NW", "Sehitwa"),
+("BW-NW-LE", "BW-NW", "Letlhakane"),
+("BW-SE-GR", "BW-SE", "Gaborone"),
+("BW-SE-MO", "BW-SE", "Mogoditshane"),
+("BW-SE-PR", "BW-SE", "Phakalane"),
+("BW-SE-TH", "BW-SE", "Thamaga"),
+("BW-SE-OT", "BW-SE", "Otse"),
+("BW-SE-MO", "BW-SE", "Molepolole"),
+("BW-SE-MO", "BW-SE", "Moshupa"),
+("BW-SE-MO", "BW-SE", "Mogobane"),
+("BW-SE-MO", "BW-SE", "Mmopane"),
+("BW-SE-LO", "BW-SE", "Lobatse"),
+("BW-SE-RA", "BW-SE", "Rasesa"),
+("BW-SE-GA", "BW-SE", "Gaborone West"),
+("BW-SO-LOB", "BW-SO", "Lobatse"),
+("BW-SO-RA", "BW-SO", "Ramotswa"),
+("BW-SO-TO", "BW-SO", "Tlokweng"),
+("BW-SO-MA", "BW-SO", "Mafitlhakgosi"),
+("BW-SO-RA", "BW-SO", "Ramonaka"),
+("BW-SO-MO", "BW-SO", "Mogobane");
+
+-- brazil
+
+INSERT INTO countries VALUES 
+("BR", "SA", "Brazil", "Brasília");
+
+INSERT INTO states VALUES
+("BR-AC", "BR", "Acre"),
+("BR-AL", "BR", "Alagoas"),
+("BR-AP", "BR", "Amapá"),
+("BR-AM", "BR", "Amazonas"),
+("BR-BA", "BR", "Bahia"),
+("BR-CE", "BR", "Ceará"),
+("BR-DF", "BR", "Distrito Federal"),
+("BR-ES", "BR", "Espírito Santo"),
+("BR-GO", "BR", "Goiás"),
+("BR-MA", "BR", "Maranhão"),
+("BR-MT", "BR", "Mato Grosso"),
+("BR-MS", "BR", "Mato Grosso do Sul"),
+("BR-MG", "BR", "Minas Gerais"),
+("BR-PA", "BR", "Pará"),
+("BR-PB", "BR", "Paraíba"),
+("BR-PR", "BR", "Paraná"),
+("BR-PE", "BR", "Pernambuco"),
+("BR-PI", "BR", "Piauí"),
+("BR-RJ", "BR", "Rio de Janeiro"),
+("BR-RN", "BR", "Rio Grande do Norte"),
+("BR-RS", "BR", "Rio Grande do Sul"),
+("BR-RO", "BR", "Rondônia"),
+("BR-RR", "BR", "Roraima"),
+("BR-SC", "BR", "Santa Catarina"),
+("BR-SP", "BR", "São Paulo"),
+("BR-SE", "BR", "Sergipe"),
+("BR-TO", "BR", "Tocantins");
+
+INSERT INTO cities VALUES
+("BR-MG-MO", "BR-MG", "Montes Claros"),
+("BR-MG-CT", "BR-MG", "Contagem"),
+("BR-MG-IP", "BR-MG", "Ipatinga"),
+("BR-MG-PC", "BR-MG", "Pouso Alegre"),
+("BR-MG-DA", "BR-MG", "Divinópolis"),
+("BR-PA-BE", "BR-PA", "Belém"),
+("BR-PA-AN", "BR-PA", "Ananindeua"),
+("BR-PA-SA", "BR-PA", "Santarém"),
+("BR-PA-MR", "BR-PA", "Marabá"),
+("BR-PA-CA", "BR-PA", "Castanhal"),
+("BR-PB-JP", "BR-PB", "João Pessoa"),
+("BR-PB-CS", "BR-PB", "Campina Grande"),
+("BR-PB-SO", "BR-PB", "Santa Rita"),
+("BR-PB-PB", "BR-PB", "Patos"),
+("BR-PB-BC", "BR-PB", "Bayeux"),
+("BR-PR-CW", "BR-PR", "Curitiba"),
+("BR-PR-LD", "BR-PR", "Londrina"),
+("BR-PR-MG", "BR-PR", "Maringá"),
+("BR-PR-PC", "BR-PR", "Ponta Grossa"),
+("BR-PR-CS", "BR-PR", "Cascavel"),
+("BR-PE-RE", "BR-PE", "Recife"),
+("BR-PE-JC", "BR-PE", "Jaboatão dos Guararapes"),
+("BR-PE-CA", "BR-PE", "Caruaru"),
+("BR-PE-OL", "BR-PE", "Olinda"),
+("BR-PE-PE", "BR-PE", "Paulista"),
+("BR-PI-TE", "BR-PI", "Teresina"),
+("BR-PI-PN", "BR-PI", "Parnaíba"),
+("BR-PI-FL", "BR-PI", "Floriano"),
+("BR-PI-PI", "BR-PI", "Picos"),
+("BR-RJ-RJ", "BR-RJ", "Rio de Janeiro"),
+("BR-RJ-SC", "BR-RJ", "São Gonçalo"),
+("BR-RJ-DC", "BR-RJ", "Duque de Caxias"),
+("BR-RJ-NO", "BR-RJ", "Nova Iguaçu"),
+("BR-RJ-BM", "BR-RJ", "Belford Roxo"),
+("BR-RN-NAT", "BR-RN", "Natal"),
+("BR-RN-MC", "BR-RN", "Mossoró"),
+("BR-RN-PA", "BR-RN", "Parnamirim"),
+("BR-RN-ME", "BR-RN", "Macaíba"),
+("BR-RN-AÇU", "BR-RN", "Açu"),
+("BR-RS-POA", "BR-RS", "Porto Alegre"),
+("BR-RS-CS", "BR-RS", "Caxias do Sul"),
+("BR-RS-CA", "BR-RS", "Canoas"),
+("BR-RS-PE", "BR-RS", "Pelotas"),
+("BR-RS-SM", "BR-RS", "Santa Maria"),
+("BR-RS-VA", "BR-RS", "Viamão"),
+("BR-RO-JP", "BR-RO", "Porto Velho"),
+("BR-RO-JI", "BR-RO", "Ji-Paraná"),
+("BR-RO-CA", "BR-RO", "Cacoal"),
+("BR-RO-VI", "BR-RO", "Vilhena"),
+("BR-RR-BOA", "BR-RR", "Boa Vista"),
+("BR-RR-RA", "BR-RR", "Rorainópolis"),
+("BR-SC-FLN", "BR-SC", "Florianópolis"),
+("BR-SC-JO", "BR-SC", "Joinville"),
+("BR-SC-BC", "BR-SC", "Blumenau"),
+("BR-SC-CS", "BR-SC", "Criciúma"),
+("BR-SC-CA", "BR-SC", "Chapecó"),
+("BR-SC-IT", "BR-SC", "Itajaí"),
+("BR-SC-JV", "BR-SC", "Jaraguá do Sul"),
+("BR-SP-SP", "BR-SP", "São Paulo"),
+("BR-SP-GRU", "BR-SP", "Guarulhos"),
+("BR-SP-CA", "BR-SP", "Campinas"),
+("BR-SP-OS", "BR-SP", "Osasco"),
+("BR-SP-SC", "BR-SP", "São Bernardo do Campo"),
+("BR-SP-SPS", "BR-SP", "São José dos Campos"),
+("BR-SP-SBC", "BR-SP", "São Bernardo do Campo"),
+("BR-SP-SCR", "BR-SP", "Sorocaba"),
+("BR-SP-SCS", "BR-SP", "São Caetano do Sul"),
+("BR-SP-TO", "BR-SP", "Taboão da Serra"),
+("BR-SP-DS", "BR-SP", "Diadema"),
+("BR-SE-AJ", "BR-SE", "Aracaju"),
+("BR-SE-NS", "BR-SE", "Nossa Senhora do Socorro"),
+("BR-SE-LA", "BR-SE", "Lagarto"),
+("BR-SE-IT", "BR-SE", "Itabaiana"),
+("BR-SE-ES", "BR-SE", "Estância");
+
+-- brunei
+
+INSERT INTO countries VALUES 
+("BN", "AS", "Brunei", "Bandar Seri Begawan");
+
+INSERT INTO cities VALUES
+("BN-BSB-BSB", "BN-BSB", "Bandar Seri Begawan"),
+("BN-BSB-TU", "BN-BSB", "Tutong"),
+("BN-BSB-KB", "BN-BSB", "Kuala Belait"),
+("BN-BSB-SE", "BN-BSB", "Seria");
+
+-- bulgaria
+
+INSERT INTO countries VALUES 
+("BG", "EU", "Bulgaria", "Sofia");
+
+INSERT INTO states VALUES
+("BG-01", "BG", "Blagoevgrad"),
+("BG-02", "BG", "Burgas"),
+("BG-03", "BG", "Dobrich"),
+("BG-04", "BG", "Gabrovo"),
+("BG-05", "BG", "Haskovo"),
+("BG-06", "BG", "Kardzhali"),
+("BG-07", "BG", "Kyustendil"),
+("BG-08", "BG", "Lovech"),
+("BG-09", "BG", "Montana"),
+("BG-10", "BG", "Pazardzhik"),
+("BG-11", "BG", "Pernik"),
+("BG-12", "BG", "Pleven"),
+("BG-13", "BG", "Plovdiv"),
+("BG-14", "BG", "Razgrad"),
+("BG-15", "BG", "Ruse"),
+("BG-16", "BG", "Silistra"),
+("BG-17", "BG", "Sliven"),
+("BG-18", "BG", "Smolyan"),
+("BG-19", "BG", "Sofia (capital)"),
+("BG-20", "BG", "Sofia (province)"),
+("BG-21", "BG", "Stara Zagora"),
+("BG-22", "BG", "Targovishte"),
+("BG-23", "BG", "Varna"),
+("BG-24", "BG", "Veliko Tarnovo"),
+("BG-25", "BG", "Vidin"),
+("BG-26", "BG", "Vratsa"),
+("BG-27", "BG", "Yambol");
+
+INSERT INTO cities VALUES
+("BG-01-BG-SD", "BG-01", "Sandanski"),
+("BG-02-BG-SP", "BG-02", "Sopot"),
+("BG-03-BG-AL", "BG-03", "Albena"),
+("BG-04-BG-TR", "BG-04", "Troyan"),
+("BG-05-BG-HA", "BG-05", "Harmanli"),
+("BG-06-BG-AK", "BG-06", "Ardino"),
+("BG-07-BG-KD", "BG-07", "Kostenets"),
+("BG-08-BG-TR", "BG-08", "Tran"),
+("BG-09-BG-BE", "BG-09", "Berkovitsa"),
+("BG-10-BG-PZ", "BG-10", "Panagyurishte"),
+("BG-11-BG-KK", "BG-11", "Kovachevtsi"),
+("BG-12-BG-KU", "BG-12", "Kula"),
+("BG-13-BG-KR", "BG-13", "Krichim"),
+("BG-14-BG-LO", "BG-14", "Loznitsa"),
+("BG-15-BG-GE", "BG-15", "Gorna Oryahovitsa"),
+("BG-16-BG-GL", "BG-16", "Glavinitsa"),
+("BG-17-BG-SV", "BG-17", "Svilengrad"),
+("BG-18-BG-RU", "BG-18", "Rudozem"),
+("BG-19-BG-BN", "BG-19", "Botevgrad"),
+("BG-20-BG-ET", "BG-20", "Etropole"),
+("BG-21-BG-NK", "BG-21", "Nikopol"),
+("BG-22-BG-OP", "BG-22", "Opaka"),
+("BG-23-BG-VK", "BG-23", "Vetovo"),
+("BG-24-BG-SE", "BG-24", "Sevlievo"),
+("BG-25-BG-KR", "BG-25", "Kresna"),
+("BG-26-BG-VL", "BG-26", "Valchedram"),
+("BG-27-BG-EL", "BG-27", "Elhovo");
+
+-- burkina faso
+
+INSERT INTO countries VALUES 
+("BF", "AF", "Burkina Faso", "Ouagadougou");
+
+INSERT INTO states VALUES
+("BF-01", "BF", "Boucle du Mouhoun"),
+("BF-02", "BF", "Cascades"),
+("BF-03", "BF", "Centre"),
+("BF-04", "BF", "Centre-Est"),
+("BF-05", "BF", "Centre-Nord"),
+("BF-06", "BF", "Centre-Ouest"),
+("BF-07", "BF", "Centre-Sud"),
+("BF-08", "BF", "Est"),
+("BF-09", "BF", "Hauts-Bassins"),
+("BF-10", "BF", "Nord"),
+("BF-11", "BF", "Plateau-Central"),
+("BF-12", "BF", "Sahel"),
+("BF-13", "BF", "Sud-Ouest");
+
+INSERT INTO cities VALUES
+("BF-01-BF-BO-GR", "BF-01", "Gorom-Gorom"),
+("BF-01-BF-BO-TI", "BF-01", "Titao"),
+("BF-02-BF-BK-SO", "BF-02", "Solenzo"),
+("BF-02-BF-BK-BO", "BF-02", "Boromo"),
+("BF-03-BF-OU-ZE", "BF-03", "Ziniaré"),
+("BF-03-BF-OU-SA", "BF-03", "Sapouy"),
+("BF-04-BF-KE-PO", "BF-04", "Pô"),
+("BF-04-BF-KE-RA", "BF-04", "Réo"),
+("BF-05-BF-OH-BO", "BF-05", "Boulsa"),
+("BF-05-BF-OH-KI", "BF-05", "Kaya"),
+("BF-06-BF-KA-RE", "BF-06", "Réo"),
+("BF-06-BF-KA-PO", "BF-06", "Pouytenga"),
+("BF-07-BF-PO-GA", "BF-07", "Gaoua"),
+("BF-07-BF-PO-MA", "BF-07", "Manga"),
+("BF-08-BF-FE-FO", "BF-08", "Fada N'gourma"),
+("BF-08-BF-FE-BO", "BF-08", "Bogandé"),
+("BF-09-BF-HB-BO", "BF-09", "Bobo-Dioulasso"),
+("BF-09-BF-HB-PO", "BF-09", "Po"),
+("BF-10-BF-NK-DI", "BF-10", "Diapaga"),
+("BF-10-BF-NK-FO", "BF-10", "Fada N'gourma"),
+("BF-11-BF-PC-RE", "BF-11", "Réo"),
+("BF-11-BF-PC-ZI", "BF-11", "Ziniaré"),
+("BF-12-BF-SA-DO", "BF-12", "Dori"),
+("BF-12-BF-SA-SE", "BF-12", "Séguénéga"),
+("BF-13-BF-SO-GA", "BF-13", "Gaoua"),
+("BF-13-BF-SO-BO", "BF-13", "Bogandé");
+
+-- burma/myanmar
+
+INSERT INTO countries VALUES 
+("MM", "AS", "Myanmar", "Naypyidaw");
+
+INSERT INTO states VALUES
+("MM-01", "MM", "Ayeyarwady"),
+("MM-02", "MM", "Bago"),
+("MM-03", "MM", "Magway"),
+("MM-04", "MM", "Mandalay"),
+("MM-05", "MM", "Sagaing"),
+("MM-06", "MM", "Tanintharyi"),
+("MM-07", "MM", "Yangon"),
+("MM-11", "MM", "Kachin"),
+("MM-12", "MM", "Kayah"),
+("MM-13", "MM", "Kayin"),
+("MM-14", "MM", "Chin"),
+("MM-15", "MM", "Mon"),
+("MM-16", "MM", "Rakhine"),
+("MM-17", "MM", "Shan");
+
+INSERT INTO cities VALUES
+("MM-01-MM-PA", "MM-01", "Pathein"),
+("MM-01-MM-NG", "MM-01", "Ngapudaw"),
+("MM-02-MM-BA", "MM-02", "Bago"),
+("MM-02-MM-TA", "MM-02", "Taungoo"),
+("MM-03-MM-MG", "MM-03", "Magway"),
+("MM-03-MM-MM", "MM-03", "Minbu"),
+("MM-04-MM-MD", "MM-04", "Mandalay"),
+("MM-04-MM-MW", "MM-04", "Meiktila"),
+("MM-05-MM-SG", "MM-05", "Sagaing"),
+("MM-05-MM-MO", "MM-05", "Monywa"),
+("MM-06-MM-DA", "MM-06", "Dawei"),
+("MM-06-MM-MY", "MM-06", "Myeik"),
+("MM-07-MM-YA", "MM-07", "Yangon"),
+("MM-07-MM-TH", "MM-07", "Thanlyin"),
+("MM-11-MM-ML", "MM-11", "Myitkyina"),
+("MM-11-MM-PH", "MM-11", "Phakant"),
+("MM-12-MM-LO", "MM-12", "Loikaw"),
+("MM-12-MM-DE", "MM-12", "Demoso"),
+("MM-13-MM-HP", "MM-13", "Hpa-an"),
+("MM-13-MM-KA", "MM-13", "Kawkareik"),
+("MM-14-MM-HK", "MM-14", "Hakha"),
+("MM-14-MM-FH", "MM-14", "Falam"),
+("MM-15-MM-MT", "MM-15", "Mawlamyine"),
+("MM-15-MM-ML", "MM-15", "Mudon"),
+("MM-16-MM-SC", "MM-16", "Sittwe"),
+("MM-16-MM-MY", "MM-16", "Maungdaw"),
+("MM-17-MM-TA", "MM-17", "Taunggyi"),
+("MM-17-MM-KY", "MM-17", "Kyaingtong"),
+("MM-01-MM-NG-KY", "MM-01", "Kyautphyu"),
+("MM-01-MM-NG-TH", "MM-01", "Thandwe"),
+("MM-02-MM-BA-PA", "MM-02", "Pyay"),
+("MM-02-MM-BA-DA", "MM-02", "Daik-U"),
+("MM-03-MM-MG-MG", "MM-03", "Magway"),
+("MM-03-MM-MG-PA", "MM-03", "Pakokku"),
+("MM-04-MM-MD-AM", "MM-04", "Amarapura"),
+("MM-04-MM-MD-MA", "MM-04", "Myingyan"),
+("MM-05-MM-SG-MA", "MM-05", "Mawlaik"),
+("MM-05-MM-SG-TT", "MM-05", "Tamtu"),
+("MM-06-MM-DA-DA", "MM-06", "Dawei"),
+("MM-06-MM-DA-HP", "MM-06", "Hpa-an"),
+("MM-07-MM-YA-TW", "MM-07", "Twante"),
+("MM-07-MM-YA-HT", "MM-07", "Htantabin"),
+("MM-11-MM-ML-WA", "MM-11", "Waingmaw"),
+("MM-11-MM-ML-MO", "MM-11", "Momauk"),
+("MM-12-MM-LO-LO", "MM-12", "Loikaw"),
+("MM-12-MM-LO-BO", "MM-12", "Bawlakhe"),
+("MM-13-MM-HP-HP", "MM-13", "Hpapun"),
+("MM-13-MM-HP-HK", "MM-13", "Hlaingbwe"),
+("MM-14-MM-HK-FA", "MM-14", "Falam"),
+("MM-14-MM-HK-HR", "MM-14", "Hrure"),
+("MM-15-MM-MT-MT", "MM-15", "Mawlamyine"),
+("MM-15-MM-MT-MO", "MM-15", "Mottama"),
+("MM-16-MM-SC-KY", "MM-16", "Kyaukpyu"),
+("MM-16-MM-SC-MA", "MM-16", "Maungdaw"),
+("MM-17-MM-TA-TT", "MM-17", "Taunggyi"),
+("MM-17-MM-TA-KT", "MM-17", "Kengtung");
+
+-- burundi
+
+INSERT INTO countries VALUES 
+("BI", "AF", "Burundi", "Bujumbura");
+
+INSERT INTO states VALUES
+("BI-BB", "BI", "Bubanza"),
+("BI-BM", "BI", "Bujumbura Mairie"),
+("BI-BL", "BI", "Bujumbura Rural"),
+("BI-BR", "BI", "Bururi"),
+("BI-CA", "BI", "Cankuzo"),
+("BI-CI", "BI", "Cibitoke"),
+("BI-GI", "BI", "Gitega"),
+("BI-KR", "BI", "Karuzi"),
+("BI-KY", "BI", "Kayanza"),
+("BI-KI", "BI", "Kirundo"),
+("BI-MA", "BI", "Makamba"),
+("BI-MU", "BI", "Muramvya"),
+("BI-MY", "BI", "Muyinga"),
+("BI-NG", "BI", "Ngozi"),
+("BI-RT", "BI", "Rutana"),
+("BI-RY", "BI", "Ruyigi");
+
+INSERT INTO cities VALUES
+("BI-BB-GB", "BI-BB", "Gihanga"),
+("BI-BB-RC", "BI-BB", "Rumonge"),
+("BI-BB-MP", "BI-BB", "Musigati"),
+("BI-BM-NG", "BI-BM", "Ngagara"),
+("BI-BM-NK", "BI-BM", "Nkumba"),
+("BI-BL-GA", "BI-BL", "Gatara"),
+("BI-BL-MU", "BI-BL", "Mubimbi"),
+("BI-BR-MB", "BI-BR", "Matana"),
+("BI-BR-GR", "BI-BR", "Gisoro"),
+("BI-CA-GI", "BI-CA", "Gitanga"),
+("BI-CA-MO", "BI-CA", "Mishiha"),
+("BI-CI-BU", "BI-CI", "Bukinanyana"),
+("BI-CI-MU", "BI-CI", "Mabayi"),
+("BI-GI-BI", "BI-GI", "Bweru"),
+("BI-GI-MP", "BI-GI", "Mpinga"),
+("BI-KR-RO", "BI-KR", "Ruhororo"),
+("BI-KR-KO", "BI-KR", "Kabarore"),
+("BI-KY-BI", "BI-KY", "Bigo"),
+("BI-KY-RU", "BI-KY", "Ruhengeri"),
+("BI-KI-BU", "BI-KI", "Buhiga"),
+("BI-KI-KA", "BI-KI", "Kanyenkoko"),
+("BI-MA-KA", "BI-MA", "Karama"),
+("BI-MA-NG", "BI-MA", "Ngagara"),
+("BI-MU-NI", "BI-MU", "Nyamusenyu"),
+("BI-MU-KA", "BI-MU", "Kiganda"),
+("BI-MY-GI", "BI-MY", "Gisuru"),
+("BI-MY-MP", "BI-MY", "Mpanda"),
+("BI-NG-GI", "BI-NG", "Gitaramuka"),
+("BI-NG-NG", "BI-NG", "Ngozi"),
+("BI-RT-BU", "BI-RT", "Burambi"),
+("BI-RT-RA", "BI-RT", "Rutana"),
+("BI-RY-GA", "BI-RY", "Gisuru");
+
+-- cabo verde
+
+INSERT INTO countries VALUES 
+("CV", "AF", "Cabo Verde", "Praia");
+
+INSERT INTO states VALUES
+("CV-B", "CV", "Brava"),
+("CV-F", "CV", "Fogo"),
+("CV-BR", "CV", "Brava"),
+("CV-MA", "CV", "Maio"),
+("CV-RB", "CV", "Ribeira Brava"),
+("CV-RG", "CV", "Ribeira Grande"),
+("CV-S", "CV", "Sal"),
+("CV-CA", "CV", "Santa Catarina"),
+("CV-CF", "CV", "Santa Catarina do Fogo"),
+("CV-CR", "CV", "Santa Cruz"),
+("CV-SD", "CV", "São Domingos"),
+("CV-SF", "CV", "São Filipe"),
+("CV-SL", "CV", "São Lourenço dos Órgãos"),
+("CV-SM", "CV", "São Miguel"),
+("CV-SS", "CV", "São Salvador do Mundo"),
+("CV-SV", "CV", "São Vicente"),
+("CV-TA", "CV", "Tarrafal");
+
+INSERT INTO cities VALUES
+("CV-B-FU-NO", "CV-B", "Nossa Senhora do Monte"),
+("CV-B-FU-FA", "CV-B", "Fajãzinha"),
+("CV-B-FU-FR", "CV-B", "Forno"),
+("CV-B-FU-CA", "CV-B", "Cachaço"),
+("CV-B-FU-FA", "CV-B", "Fajãzinha"),
+("CV-F-CT-CH", "CV-F", "Cha das Caldeiras"),
+("CV-F-CT-PN", "CV-F", "Portela"),
+("CV-F-CT-PA", "CV-F", "Pai António"),
+("CV-BR-NO-NO", "CV-BR", "Nova Sintra"),
+("CV-BR-NO-NO", "CV-BR", "Nova Sintra"),
+("CV-BR-NO-NH", "CV-BR", "Nossa Senhora do Monte"),
+("CV-MA-VA-VA", "CV-MA", "Vila do Maio"),
+("CV-MA-VA-PT", "CV-MA", "Praia Gonçalo"),
+("CV-RB-RB-RB", "CV-RB", "Ribeira Brava"),
+("CV-RB-RB-BO", "CV-RB", "Borim"),
+("CV-RB-TB-TB", "CV-RB", "Tarrafal de Monte Trigo"),
+("CV-RB-TB-FR", "CV-RB", "Fontainhas"),
+("CV-RG-RB-RB", "CV-RG", "Ribeira Grande"),
+("CV-RG-RB-PA", "CV-RG", "Povoação Velha"),
+("CV-RG-PV-PV", "CV-RG", "Ponta do Sol"),
+("CV-RG-PV-CO", "CV-RG", "Cova Joana"),
+("CV-S-ES-ES", "CV-S", "Espargos"),
+("CV-S-ES-PD", "CV-S", "Pedra de Lume"),
+("CV-S-PR-PR", "CV-S", "Palmeira"),
+("CV-S-PR-CT", "CV-S", "Cruz das Picos"),
+("CV-CA-AS-AS", "CV-CA", "Assomada"),
+("CV-CA-AS-BI", "CV-CA", "Bisalhães"),
+("CV-CF-MO-MO", "CV-CF", "Mosteiros"),
+("CV-CF-MO-CA", "CV-CF", "Cova Figueira"),
+("CV-CR-SC-SC", "CV-CR", "Santa Cruz"),
+("CV-CR-SC-BL", "CV-CR", "Bandeirantes"),
+("CV-SD-PN-PN", "CV-SD", "Picos"),
+("CV-SD-PN-SB", "CV-SD", "Santa Bárbara"),
+("CV-SF-CP-CP", "CV-SF", "Cova Figueira"),
+("CV-SF-CP-SA", "CV-SF", "São Filipe"),
+("CV-SL-CA-CA", "CV-SL", "Calheta"),
+("CV-SL-CA-SM", "CV-SL", "Santa Maria"),
+("CV-SM-CA-CA", "CV-SM", "Calheta de São Miguel"),
+("CV-SM-CA-TA", "CV-SM", "Tarrafal"),
+("CV-SS-SC-SC", "CV-SS", "Sal Rei"),
+("CV-SS-SC-BO", "CV-SS", "Boa Esperança"),
+("CV-SV-MI-MI", "CV-SV", "Mindelo"),
+("CV-SV-MI-RT", "CV-SV", "Ribeira de Vinha"),
+("CV-TA-TA-TA", "CV-TA", "Tarrafal");
+
+-- cambodia
+
+INSERT INTO countries VALUES 
+("KH", "AS", "Cambodia", "Phnom Penh");
+
+INSERT INTO states VALUES
+("KH-1", "KH", "Phnom Penh"),
+("KH-2", "KH", "Banteay Meanchey"),
+("KH-3", "KH", "Battambang"),
+("KH-4", "KH", "Kampong Cham"),
+("KH-5", "KH", "Kampong Chhnang"),
+("KH-6", "KH", "Kampong Speu"),
+("KH-7", "KH", "Kampong Thom"),
+("KH-8", "KH", "Kampot"),
+("KH-9", "KH", "Kandal"),
+("KH-10", "KH", "Koh Kong"),
+("KH-11", "KH", "Kratié"),
+("KH-12", "KH", "Mondulkiri"),
+("KH-13", "KH", "Oddar Meanchey"),
+("KH-14", "KH", "Pailin"),
+("KH-15", "KH", "Preah Sihanouk"),
+("KH-16", "KH", "Preah Vihear"),
+("KH-17", "KH", "Prey Veng"),
+("KH-18", "KH", "Pursat"),
+("KH-19", "KH", "Ratanakiri"),
+("KH-20", "KH", "Siem Reap"),
+("KH-21", "KH", "Stung Treng"),
+("KH-22", "KH", "Svay Rieng"),
+("KH-23", "KH", "Takéo");
+
+INSERT INTO cities VALUES
+("KH-1-PP-TM", "KH-1", "Toul Kork"),
+("KH-1-PP-DS", "KH-1", "Dangkao"),
+("KH-1-PP-ME", "KH-1", "Meanchey"),
+("KH-2-BM-BC", "KH-2", "Banan"),
+("KH-2-BM-PD", "KH-2", "Phnum Proek"),
+("KH-3-KB-TB", "KH-3", "Ta Khmau"),
+("KH-3-KB-KT", "KH-3", "Kampong Tralach"),
+("KH-4-KC-KC", "KH-4", "Kampong Cham"),
+("KH-4-KC-ST", "KH-4", "Stueng Trang"),
+("KH-5-KS-CD", "KH-5", "Chbar Mon"),
+("KH-5-KS-RO", "KH-5", "Rolea B'ier"),
+("KH-6-KT-KT", "KH-6", "Kampong Thom"),
+("KH-6-KT-ST", "KH-6", "Stueng Saen"),
+("KH-7-KK-KK", "KH-7", "Kampot"),
+("KH-7-KK-AT", "KH-7", "Angkor Chey"),
+("KH-8-KL-PT", "KH-8", "Phnom Sruoch"),
+("KH-8-KL-KK", "KH-8", "Kiri Vong"),
+("KH-9-KK-SB", "KH-9", "Srae Ambel"),
+("KH-9-KK-DM", "KH-9", "Botum Sakor"),
+("KH-10-KR-KR", "KH-10", "Kratié"),
+("KH-10-KR-SB", "KH-10", "Sambor"),
+("KH-11-MM-PS", "KH-11", "Pou Senchey"),
+("KH-11-MM-ST", "KH-11", "Sen Monorom"),
+("KH-12-OM-AN", "KH-12", "Anlong Veng"),
+("KH-12-OM-SA", "KH-12", "Samraong"),
+("KH-13-PI-PI", "KH-13", "Pailin"),
+("KH-13-PI-OS", "KH-13", "O'Smach"),
+("KH-14-PS-PS", "KH-14", "Preah Sihanouk"),
+("KH-14-PS-KR", "KH-14", "Kampong Seila"),
+("KH-15-PV-PV", "KH-15", "Preah Vihear"),
+("KH-15-PV-TC", "KH-15", "Tbaeng Meanchey"),
+("KH-16-PV-KK", "KH-16", "Kampong Svay"),
+("KH-16-PV-RT", "KH-16", "Rovieng"),
+("KH-17-PT-PR", "KH-17", "Pea Reang"),
+("KH-17-PT-KA", "KH-17", "Kamchay Mear"),
+("KH-18-RT-PR", "KH-18", "Prumsat"),
+("KH-18-RT-VA", "KH-18", "Veal Veaeng"),
+("KH-19-SR-SR", "KH-19", "Siem Reap"),
+("KH-19-SR-AN", "KH-19", "Angkor Chum"),
+("KH-20-ST-ST", "KH-20", "Stung Treng"),
+("KH-20-ST-SE", "KH-20", "Siem Pang"),
+("KH-21-SR-SV", "KH-21", "Svay Rieng"),
+("KH-21-SR-RO", "KH-21", "Romeas Hek"),
+("KH-22-TK-TA", "KH-22", "Ta Khmao");
+
+-- cameroon
+
+INSERT INTO countries VALUES 
+("CM", "AF", "Cameroon", "Yaoundé");
+
+INSERT INTO states VALUES
+("CM-AD", "CM", "Adamawa"),
+("CM-CE", "CM", "Centre"),
+("CM-ES", "CM", "East"),
+("CM-LT", "CM", "Littoral"),
+("CM-NO", "CM", "North"),
+("CM-NW", "CM", "Northwest"),
+("CM-SO", "CM", "South"),
+("CM-SW", "CM", "Southwest"),
+("CM-WE", "CM", "West");
+
+INSERT INTO cities VALUES
+("CM-AD-NK-MB", "CM-AD-NK", "Meiganga"),
+("CM-AD-NK-NG", "CM-AD-NK", "Ngaoundal"),
+("CM-AD-NK-TO", "CM-AD-NK", "Touboro"),
+("CM-AD-YE-BE", "CM-AD-YE", "Belel"),
+("CM-AD-YE-NG", "CM-AD-YE", "Ngaoundéré"),
+("CM-CE-YA-MF", "CM-CE-YA", "Mfou"),
+("CM-CE-YA-OY", "CM-CE-YA", "Obala"),
+("CM-CE-YA-EK", "CM-CE-YA", "Emana"),
+("CM-CE-DL-BO", "CM-CE-DL", "Bonabéri"),
+("CM-CE-DL-AK", "CM-CE-DL", "Akonolinga"),
+("CM-ES-EB-KY", "CM-ES-EB", "Kye-Ossi"),
+("CM-ES-EB-MB", "CM-ES-EB", "Mebometa"),
+("CM-LT-DO-BW", "CM-LT-DO", "Bonabéri"),
+("CM-LT-DO-ND", "CM-LT-DO", "Nkongsamba"),
+("CM-LT-YA-MV", "CM-LT-YA", "Mvan"),
+("CM-LT-YA-OD", "CM-LT-YA", "Odza"),
+("CM-NO-GR-GA", "CM-NO-GR", "Garoua"),
+("CM-NO-GR-KA", "CM-NO-GR", "Kaélé"),
+("CM-NW-BM-BA", "CM-NW-BM", "Bamenda"),
+("CM-NW-BM-BA", "CM-NW-BM", "Bafoussam"),
+("CM-SO-EY-NG", "CM-SO-EY", "Ngoulmendjim"),
+("CM-SO-EY-AK", "CM-SO-EY", "Akom II"),
+("CM-SW-BU-BO", "CM-SW-BU", "Bonakanda"),
+("CM-SW-BU-BI", "CM-SW-BU", "Buea"),
+("CM-WE-DS-BA", "CM-WE-DS", "Bafoussam"),
+("CM-WE-DS-DS", "CM-WE-DS", "Dschang"),
+("CM-WE-BA-BA", "CM-WE-BA", "Bafoussam"),
+("CM-WE-BA-BA", "CM-WE-BA", "Babadjou");
+
+-- canada
+
+INSERT INTO countries VALUES 
+("CA", "NA", "Canada", "Ottawa");
+
+INSERT INTO states VALUES
+("CA-AB", "CA", "Alberta"),
+("CA-BC", "CA", "British Columbia"),
+("CA-MB", "CA", "Manitoba"),
+("CA-NB", "CA", "New Brunswick"),
+("CA-NL", "CA", "Newfoundland and Labrador"),
+("CA-NS", "CA", "Nova Scotia"),
+("CA-ON", "CA", "Ontario"),
+("CA-PE", "CA", "Prince Edward Island"),
+("CA-QC", "CA", "Quebec"),
+("CA-SK", "CA", "Saskatchewan"),
+("CA-NT", "CA", "Northwest Territories"),
+("CA-NU", "CA", "Nunavut"),
+("CA-YT", "CA", "Yukon");
+
+INSERT INTO cities VALUES
+("CA-AB-ED", "CA-AB", "Edmonton"),
+("CA-AB-CG", "CA-AB", "Calgary"),
+("CA-BC-VAN", "CA-BC", "Vancouver"),
+("CA-BC-VIC", "CA-BC", "Victoria"),
+("CA-MB-WP", "CA-MB", "Winnipeg"),
+("CA-NB-FR", "CA-NB", "Fredericton"),
+("CA-NL-SJ", "CA-NL", "St. John's"),
+("CA-NS-HF", "CA-NS", "Halifax"),
+("CA-ON-TO", "CA-ON", "Toronto"),
+("CA-ON-OT", "CA-ON", "Ottawa"),
+("CA-PE-CH", "CA-PE", "Charlottetown"),
+("CA-QC-MT", "CA-QC", "Montreal"),
+("CA-SK-RG", "CA-SK", "Regina"),
+("CA-NT-YK", "CA-NT", "Yellowknife"),
+("CA-NU-IQ", "CA-NU", "Iqaluit"),
+("CA-AB-ED-ST", "CA-AB-ED", "St. Albert"),
+("CA-AB-CG-LT", "CA-AB-CG", "Lethbridge"),
+("CA-BC-VAN-SR", "CA-BC-VAN", "Surrey"),
+("CA-BC-VAN-KE", "CA-BC-VAN", "Kelowna"),
+("CA-BC-VIC-NM", "CA-BC-VIC", "North Saanich"),
+("CA-BC-VIC-SO", "CA-BC-VIC", "Sooke"),
+("CA-MB-WP-BN", "CA-MB-WP", "Brandon"),
+("CA-MB-WP-ST", "CA-MB-WP", "Steinbach"),
+("CA-NB-FR-MO", "CA-NB-FR", "Moncton"),
+("CA-NB-FR-SP", "CA-NB-FR", "Saint John"),
+("CA-NL-SJ-MT", "CA-NL-SJ", "Mount Pearl"),
+("CA-NL-SJ-PA", "CA-NL-SJ", "Paradise"),
+("CA-NS-HF-DA", "CA-NS-HF", "Dartmouth"),
+("CA-NS-HF-SY", "CA-NS-HF", "Sydney"),
+("CA-ON-TO-MI", "CA-ON-TO", "Mississauga"),
+("CA-ON-OT-KA", "CA-ON-OT", "Kanata"),
+("CA-PE-CH-ST", "CA-PE-CH", "Summerside"),
+("CA-PE-CH-CA", "CA-PE-CH", "Cavendish"),
+("CA-QC-MT-LA", "CA-QC-MT", "Laval"),
+("CA-QC-MT-LG", "CA-QC-MT", "Longueuil"),
+("CA-SK-RG-PA", "CA-SK-RG", "Prince Albert"),
+("CA-SK-RG-MJ", "CA-SK-RG", "Moose Jaw"),
+("CA-NT-YK-FL", "CA-NT-YK", "Fort Liard"),
+("CA-NT-YK-IN", "CA-NT-YK", "Inuvik"),
+("CA-NU-IQ-KU", "CA-NU-IQ", "Kugluktuk"),
+("CA-NU-IQ-AR", "CA-NU-IQ", "Arviat");
+
+-- cayman Islands
+
+INSERT INTO countries VALUES 
+("KY", "NA", "Cayman Islands", "George Town");
+
+INSERT INTO cities VALUES
+("KY-GT-GT", "KY-GT", "George Town"),
+("KY-CB-BR", "KY-CB", "West End"),
+("KY-CB-SV", "KY-CB", "Spot Bay"),
+("KY-LC-LC", "KY-LC", "Blossom Village"),
+("KY-LC-SC", "KY-LC", "South Town");
+
+-- chad
+
+INSERT INTO countries VALUES 
+("TD", "AF", "Chad", "N'Djamena");
+
+INSERT INTO states VALUES
+("TD-BA", "TD", "Batha"),
+("TD-BG", "TD", "Bahr el Gazel"),
+("TD-BO", "TD", "Borkou"),
+("TD-EN", "TD", "Ennedi"),
+("TD-GR", "TD", "Guéra"),
+("TD-HL", "TD", "Hadjer-Lamis"),
+("TD-KA", "TD", "Kanem"),
+("TD-LC", "TD", "Lac"),
+("TD-LO", "TD", "Logone Occidental"),
+("TD-LR", "TD", "Logone Oriental"),
+("TD-MA", "TD", "Mandoul"),
+("TD-MC", "TD", "Moyen-Chari"),
+("TD-MO", "TD", "Mayo-Kebbi Ouest"),
+("TD-MS", "TD", "Mayo-Kebbi Est"),
+("TD-ND", "TD", "N'Djamena"),
+("TD-OD", "TD", "Ouaddaï"),
+("TD-SA", "TD", "Salamat"),
+("TD-SI", "TD", "Sila"),
+("TD-TA", "TD", "Tandjilé"),
+("TD-TI", "TD", "Tibesti"),
+("TD-WF", "TD", "Wadi Fira");
+
+INSERT INTO cities VALUES
+("TD-BA-AT", "TD-BA", "Ati"),
+("TD-BG-MO", "TD-BG", "Mongororo"),
+("TD-BO-AM", "TD-BO", "Am Dam"),
+("TD-EN-AB", "TD-EN", "Abéché"),
+("TD-GR-KY", "TD-GR", "Kyabé"),
+("TD-HL-KY", "TD-HL", "Kyabé"),
+("TD-KA-MA", "TD-KA", "Mao"),
+("TD-LC-KI", "TD-LC", "Koumra"),
+("TD-LO-BE", "TD-LO", "Bébédjia"),
+("TD-LR-ME", "TD-LR", "Méiganga"),
+("TD-MA-KY", "TD-MA", "Kyabé"),
+("TD-MC-LO", "TD-MC", "Laï"),
+("TD-MO-BE", "TD-MO", "Bébédjia"),
+("TD-MS-SM", "TD-MS", "Sarh"),
+("TD-ND-NM", "TD-ND", "N'Djamena"),
+("TD-OD-AB", "TD-OD", "Abéché"),
+("TD-SA-KY", "TD-SA", "Kyabé"),
+("TD-SI-AM", "TD-SI", "Am Timan"),
+("TD-TA-LA", "TD-TA", "Laï"),
+("TD-TI-ZO", "TD-TI", "Zouar"),
+("TD-WF-AB", "TD-WF", "Abéché"),
+("TD-BO-FO", "TD-BO", "Faya"),
+("TD-LO-GR", "TD-LO", "Gredaya"),
+("TD-MS-KO", "TD-MS", "Koumra"),
+("TD-OD-AD", "TD-OD", "Adré");
+
+-- chile
+
+INSERT INTO countries VALUES 
+("CL", "SA", "Chile", "Santiago");
+
+INSERT INTO states VALUES
+("CL-AR", "CL", "Arica y Parinacota"),
+("CL-TA", "CL", "Tarapacá"),
+("CL-AN", "CL", "Antofagasta"),
+("CL-AT", "CL", "Atacama"),
+("CL-CO", "CL", "Coquimbo"),
+("CL-VA", "CL", "Valparaíso"),
+("CL-LI", "CL", "Libertador General Bernardo O'Higgins"),
+("CL-ML", "CL", "Maule"),
+("CL-BI", "CL", "Biobío"),
+("CL-AR", "CL", "Araucanía"),
+("CL-LR", "CL", "Los Ríos"),
+("CL-LA", "CL", "Los Lagos"),
+("CL-AY", "CL", "Aysén del General Carlos Ibáñez del Campo"),
+("CL-MG", "CL", "Magallanes y de la Antártica Chilena"),
+("CL-RM", "CL", "Región Metropolitana de Santiago");
+
+INSERT INTO cities VALUES
+("CL-AR-CO", "CL-AR", "Codpa"),
+("CL-AR-GE", "CL-AR", "General Lagos"),
+("CL-TA-HU", "CL-TA", "Huara"),
+("CL-TA-PH", "CL-TA", "Pica"),
+("CL-AN-CT", "CL-AN", "Calama"),
+("CL-AN-TO", "CL-AN", "Tocopilla"),
+("CL-AT-CP", "CL-AT", "Caldera"),
+("CL-AT-FI", "CL-AT", "Freirina"),
+("CL-CO-OV", "CL-CO", "Ovalle"),
+("CL-CO-IV", "CL-CO", "Illapel"),
+("CL-VA-QU", "CL-VA", "Quillota"),
+("CL-VA-LA", "CL-VA", "La Calera"),
+("CL-LI-RI", "CL-LI", "Rengo"),
+("CL-LI-LO", "CL-LI", "Litueche"),
+("CL-ML-TL", "CL-ML", "Talca"),
+("CL-ML-SN", "CL-ML", "San Javier"),
+("CL-BI-TD", "CL-BI", "Talcahuano"),
+("CL-BI-LO", "CL-BI", "Los Ángeles"),
+("CL-AR-PU", "CL-AR", "Pucón"),
+("CL-AR-VI", "CL-AR", "Villarrica"),
+("CL-LR-VA", "CL-LR", "Valdivia"),
+("CL-LR-LL", "CL-LR", "La Unión"),
+("CL-LA-OS", "CL-LA", "Osorno"),
+("CL-LA-PU", "CL-LA", "Purranque"),
+("CL-AY-PA", "CL-AY", "Puerto Aisén"),
+("CL-AY-CO", "CL-AY", "Cochrane"),
+("CL-MG-PO", "CL-MG", "Porvenir"),
+("CL-MG-US", "CL-MG", "Useless Bay"),
+("CL-RM-MA", "CL-RM", "Maipú"),
+("CL-RM-PI", "CL-RM", "Pirque");
+
+-- china
+
+INSERT INTO countries VALUES 
+("CN", "AS", "China", "Beijing");
+
+INSERT INTO states VALUES
+("CN-BJ", "CN", "Beijing"),
+("CN-TJ", "CN", "Tianjin"),
+("CN-HE", "CN", "Hebei"),
+("CN-SX", "CN", "Shanxi"),
+("CN-NM", "CN", "Inner Mongolia"),
+("CN-LN", "CN", "Liaoning"),
+("CN-JL", "CN", "Jilin"),
+("CN-HL", "CN", "Heilongjiang"),
+("CN-SH", "CN", "Shanghai"),
+("CN-JS", "CN", "Jiangsu"),
+("CN-ZJ", "CN", "Zhejiang"),
+("CN-AH", "CN", "Anhui"),
+("CN-FJ", "CN", "Fujian"),
+("CN-JX", "CN", "Jiangxi"),
+("CN-SD", "CN", "Shandong"),
+("CN-HA", "CN", "Henan"),
+("CN-HB", "CN", "Hubei"),
+("CN-HN", "CN", "Hunan"),
+("CN-GD", "CN", "Guangdong"),
+("CN-GX", "CN", "Guangxi"),
+("CN-HI", "CN", "Hainan"),
+("CN-CQ", "CN", "Chongqing"),
+("CN-SC", "CN", "Sichuan"),
+("CN-GZ", "CN", "Guizhou"),
+("CN-YN", "CN", "Yunnan"),
+("CN-XZ", "CN", "Tibet"),
+("CN-SN", "CN", "Shaanxi"),
+("CN-GS", "CN", "Gansu"),
+("CN-QH", "CN", "Qinghai"),
+("CN-NX", "CN", "Ningxia"),
+("CN-XJ", "CN", "Xinjiang");
+
+INSERT INTO cities VALUES
+("CN-BJ-CT", "CN-BJ", "Changping"),
+("CN-BJ-TZ", "CN-BJ", "Tongzhou"),
+("CN-TJ-HD", "CN-TJ", "Hedong"),
+("CN-TJ-BJ", "CN-TJ", "Beichen"),
+("CN-SH-PU", "CN-SH", "Pudong"),
+("CN-SH-YG", "CN-SH", "Yangpu"),
+("CN-HK-KL", "CN-HK", "Kowloon"),
+("CN-HK-NC", "CN-HK", "New Territories"),
+("CN-HK-IW", "CN-HK", "Islands West"),
+("CN-MO-SE", "CN-MO", "Macau Peninsula"),
+("CN-MO-CS", "CN-MO", "Coloane"),
+("CN-HB-SJ", "CN-HB", "Shijiazhuang"),
+("CN-HB-TA", "CN-HB", "Tangshan"),
+("CN-LN-DL", "CN-LN", "Dalian"),
+("CN-LN-SY", "CN-LN", "Shenyang"),
+("CN-JS-WX", "CN-JS", "Wuxi"),
+("CN-JS-CS", "CN-JS", "Changzhou"),
+("CN-ZJ-NB", "CN-ZJ", "Ningbo"),
+("CN-ZJ-WH", "CN-ZJ", "Wenzhou"),
+("CN-AH-BX", "CN-AH", "Bengbu"),
+("CN-AH-HS", "CN-AH", "Huaibei"),
+("CN-GD-HZ", "CN-GD", "Huizhou"),
+("CN-FJ-XM", "CN-FJ", "Xiamen"),
+("CN-HN-ZZ", "CN-HN", "Zhengzhou"),
+("CN-HN-LY", "CN-HN", "Luoyang"),
+("CN-SC-DY", "CN-SC", "Deyang"),
+("CN-SC-MY", "CN-SC", "Mianyang"),
+("CN-GD-ZH", "CN-GD", "Zhuhai"),
+("CN-GX-LI", "CN-GX", "Liuzhou"),
+("CN-JX-JA", "CN-JX", "Ji'an"),
+("CN-JX-GY", "CN-JX", "Ganzhou"),
+("CN-GD-JM", "CN-GD", "Jiangmen"),
+("CN-HL-JX", "CN-HL", "Jixi"),
+("CN-SD-QD", "CN-SD", "Qingdao"),
+("CN-SD-ZB", "CN-SD", "Zibo"),
+("CN-JX-JD", "CN-JX", "Jingdezhen"),
+("CN-JL-SP", "CN-JL", "Siping"),
+("CN-HL-JM", "CN-HL", "Jiamusi"),
+("CN-ZJ-JH", "CN-ZJ", "Jinhua"),
+("CN-AH-HN", "CN-AH", "Huainan"),
+("CN-SC-PZ", "CN-SC", "Panzhihua");
+
+-- colombia
+
+INSERT INTO countries VALUES 
+("CO", "SA", "Colombia", "Bogotá");
+
+INSERT INTO states VALUES
+("CO-AMA", "CO", "Amazonas"),
+("CO-ANT", "CO", "Antioquia"),
+("CO-ARA", "CO", "Arauca"),
+("CO-ATL", "CO", "Atlántico"),
+("CO-BOL", "CO", "Bolívar"),
+("CO-BOY", "CO", "Boyacá"),
+("CO-CAL", "CO", "Caldas"),
+("CO-CAQ", "CO", "Caquetá"),
+("CO-CAS", "CO", "Casanare"),
+("CO-CAU", "CO", "Cauca"),
+("CO-CES", "CO", "Cesar"),
+("CO-CHO", "CO", "Chocó"),
+("CO-COR", "CO", "Córdoba"),
+("CO-CUN", "CO", "Cundinamarca"),
+("CO-GUA", "CO", "Guainía"),
+("CO-GUV", "CO", "Guaviare"),
+("CO-HUI", "CO", "Huila"),
+("CO-LAG", "CO", "La Guajira"),
+("CO-MAG", "CO", "Magdalena"),
+("CO-MET", "CO", "Meta"),
+("CO-NAR", "CO", "Nariño"),
+("CO-NSA", "CO", "Norte de Santander"),
+("CO-PUT", "CO", "Putumayo"),
+("CO-QUI", "CO", "Quindío"),
+("CO-RIS", "CO", "Risaralda"),
+("CO-SAN", "CO", "Santander"),
+("CO-SUC", "CO", "Sucre"),
+("CO-TOL", "CO", "Tolima"),
+("CO-VAC", "CO", "Valle del Cauca"),
+("CO-VAU", "CO", "Vaupés"),
+("CO-VID", "CO", "Vichada");
+
+INSERT INTO cities VALUES
+("CO-DC-SO", "CO-DC", "Soacha"),
+("CO-ANT-BE", "CO-ANT", "Bello"),
+("CO-ANT-IT", "CO-ANT", "Itagüí"),
+("CO-ANT-SM", "CO-ANT", "Sabaneta"),
+("CO-ATL-PS", "CO-ATL", "Puerto Colombia"),
+("CO-ATL-BR", "CO-ATL", "Baranoa"),
+("CO-ATL-PM", "CO-ATL", "Palmar de Varela"),
+("CO-BOL-MG", "CO-BOL", "Magangué"),
+("CO-BOL-SO", "CO-BOL", "Soplaviento"),
+("CO-CAU-AL", "CO-CAU", "Alderetes"),
+("CO-CAU-CA", "CO-CAU", "Candelaria"),
+("CO-CAU-PU", "CO-CAU", "Puerto Tejada"),
+("CO-VAL-ZA", "CO-VAL", "Zarzal"),
+("CO-VAL-CO", "CO-VAL", "Cordobá"),
+("CO-CUN-CH", "CO-CUN", "Chía"),
+("CO-BOY-DU", "CO-BOY", "Duitama"),
+("CO-BOY-PA", "CO-BOY", "Paipa"),
+("CO-CAL-PB", "CO-CAL", "Palestina"),
+("CO-CAL-VJ", "CO-CAL", "Vijes"),
+("CO-CAQ-GA", "CO-CAQ", "Garzón"),
+("CO-CAQ-SO", "CO-CAQ", "Solano"),
+("CO-CAS-TM", "CO-CAS", "Támara"),
+("CO-CES-CO", "CO-CES", "Cotorra"),
+("CO-CES-AR", "CO-CES", "Arboletes"),
+("CO-CHO-CA", "CO-CHO", "Cértegui"),
+("CO-CHO-CR", "CO-CHO", "Condoto"),
+("CO-COR-LR", "CO-COR", "Lorica"),
+("CO-COR-PL", "CO-COR", "Planeta Rica"),
+("CO-GUA-RI", "CO-GUA", "Riohacha"),
+("CO-GUA-FN", "CO-GUA", "Fonseca"),
+("CO-MAG-FU", "CO-MAG", "Fundación"),
+("CO-MAG-SO", "CO-MAG", "Sitionuevo"),
+("CO-MET-GU", "CO-MET", "Guamal"),
+("CO-NAR-IM", "CO-NAR", "Ipiales"),
+("CO-NAR-PU", "CO-NAR", "Pupiales"),
+("CO-NSA-EL", "CO-NSA", "El Carmen"),
+("CO-NSA-SA", "CO-NSA", "Salazar"),
+("CO-PUT-PV", "CO-PUT", "Puerto Leguízamo"),
+("CO-PUT-SO", "CO-PUT", "Sibundoy"),
+("CO-QUI-BU", "CO-QUI", "Buenavista"),
+("CO-QUI-PI", "CO-QUI", "Pijao"),
+("CO-RIS-DS", "CO-RIS", "Dosquebradas"),
+("CO-RIS-PA", "CO-RIS", "Pueblo Rico"),
+("CO-SAN-AR", "CO-SAN", "Aratoca"),
+("CO-SAN-CP", "CO-SAN", "Capitanejo"),
+("CO-SUC-MS", "CO-SUC", "Morroa"),
+("CO-SUC-SL", "CO-SUC", "San Luís de Sincé"),
+("CO-TOL-AL", "CO-TOL", "Alpujarra"),
+("CO-TOL-PR", "CO-TOL", "Planadas"),
+("CO-VAC-GI", "CO-VAC", "Ginebra"),
+("CO-VAC-RO", "CO-VAC", "Roldanillo"),
+("CO-VAU-CA", "CO-VAU", "Carurú"),
+("CO-VAU-CU", "CO-VAU", "Cumaribo"),
+("CO-VID-CA", "CO-VID", "Cumaribo");
+
+-- comoros
+
+INSERT INTO countries VALUES 
+("KM", "AF", "Comoros", "Moroni");
+
+INSERT INTO cities VALUES
+("KM-NG-MI", "KM-NG", "Miringoni"),
+("KM-GR-DM", "KM-GR", "Dembeni"),
+("KM-GR-VD", "KM-GR", "Vouani"),
+("KM-AN-PM", "KM-AN", "Pamandzi"),
+("KM-AN-KN", "KM-AN", "Kani-Kéli"),
+("KM-MW-MW", "KM-MW", "Mitsamiouli"),
+("KM-MW-MT", "KM-MW", "M'Tsangamouji");
+
+-- costa rica
+
+INSERT INTO countries VALUES 
+("CR", "NA", "Costa Rica", "San Jose");
+
+INSERT INTO states VALUES
+("CR-SJ", "CR", "San Jose"),
+("CR-LI", "CR", "Limón"),
+("CR-P", "CR", "Puntarenas"),
+("CR-HE", "CR", "Heredia"),
+("CR-AL", "CR", "Alajuela"),
+("CR-GU", "CR", "Guanacaste"),
+("CR-CA", "CR", "Cartago");
+
+INSERT INTO cities VALUES
+("CR-SJ-DS", "CR-SJ", "Desamparados"),
+("CR-SJ-AL", "CR-SJ", "Alajuelita"),
+("CR-LI-LR", "CR-LI", "Limon"),
+("CR-LI-PV", "CR-LI", "Pococi"),
+("CR-P-PN", "CR-P", "Puntarenas"),
+("CR-P-ES", "CR-P", "Esparza"),
+("CR-HE-BE", "CR-HE", "Heredia"),
+("CR-HE-BR", "CR-HE", "Barva"),
+("CR-AL-AT", "CR-AL", "Atenas"),
+("CR-AL-OU", "CR-AL", "Orotina"),
+("CR-GU-NA", "CR-GU", "Naranjo"),
+("CR-GU-SJ", "CR-GU", "Santa Cruz"),
+("CR-CA-TU", "CR-CA", "Turrialba"),
+("CR-CA-PA", "CR-CA", "Paraiso");
+
+-- croatia
+
+INSERT INTO countries VALUES 
+("HR", "EU", "Croatia", "Zagreb");
+
+INSERT INTO states VALUES
+("HR-01", "HR", "Zagreb County"),
+("HR-02", "HR", "Krapina-Zagorje County"),
+("HR-03", "HR", "Sisak-Moslavina County"),
+("HR-04", "HR", "Karlovac County"),
+("HR-05", "HR", "Varaždin County"),
+("HR-06", "HR", "Koprivnica-Križevci County"),
+("HR-07", "HR", "Bjelovar-Bilogora County"),
+("HR-08", "HR", "Primorje-Gorski Kotar County"),
+("HR-09", "HR", "Lika-Senj County"),
+("HR-10", "HR", "Virovitica-Podravina County"),
+("HR-11", "HR", "Požega-Slavonia County"),
+("HR-12", "HR", "Brod-Posavina County"),
+("HR-13", "HR", "Zadar County"),
+("HR-14", "HR", "Osijek-Baranja County"),
+("HR-15", "HR", "Šibenik-Knin County"),
+("HR-16", "HR", "Vukovar-Syrmia County"),
+("HR-17", "HR", "Split-Dalmatia County"),
+("HR-18", "HR", "Istria County"),
+("HR-19", "HR", "Dubrovnik-Neretva County"),
+("HR-20", "HR", "Međimurje County"),
+("HR-21", "HR", "Zagreb City");
+
+INSERT INTO cities VALUES
+("HR-01-SC", "HR-01", "Samobor"),
+("HR-02-KS", "HR-02", "Krapinske Toplice"),
+("HR-03-HR", "HR-03", "Hrvatska Kostajnica"),
+("HR-04-OZ", "HR-04", "Ozalj"),
+("HR-05-PR", "HR-05", "Prelog"),
+("HR-06-PD", "HR-06", "Đurđevac"),
+("HR-07-GD", "HR-07", "Garešnica"),
+("HR-08-OP", "HR-08", "Opatija"),
+("HR-09-UG", "HR-09", "Udbina"),
+("HR-10-VP", "HR-10", "Virovitica"),
+("HR-11-PS", "HR-11", "Pleternica"),
+("HR-12-NG", "HR-12", "Nova Gradiška"),
+("HR-13-BS", "HR-13", "Biograd na Moru"),
+("HR-14-NV", "HR-14", "Našice"),
+("HR-15-KN", "HR-15", "Knin"),
+("HR-16-VK", "HR-16", "Vinkovci"),
+("HR-17-MK", "HR-17", "Makarska"),
+("HR-18-PO", "HR-18", "Poreč"),
+("HR-19-ML", "HR-19", "Metković"),
+("HR-20-KC", "HR-20", "Koprivnica"),
+("HR-21-ZC", "HR-21", "Zaprešić");
+
+-- cuba
+
+INSERT INTO countries VALUES 
+("CU", "NA", "Cuba", "Havana");
+
+INSERT INTO states VALUES
+("CU-01", "CU", "Pinar del Río"),
+("CU-02", "CU", "La Habana"),
+("CU-03", "CU", "Ciudad de La Habana"),
+("CU-04", "CU", "Matanzas"),
+("CU-05", "CU", "Villa Clara"),
+("CU-06", "CU", "Cienfuegos"),
+("CU-07", "CU", "Sancti Spíritus"),
+("CU-08", "CU", "Ciego de Ávila"),
+("CU-09", "CU", "Camagüey"),
+("CU-10", "CU", "Las Tunas"),
+("CU-11", "CU", "Holguín"),
+("CU-12", "CU", "Granma"),
+("CU-13", "CU", "Santiago de Cuba"),
+("CU-14", "CU", "Guantánamo");
+
+INSERT INTO cities VALUES
+("CU-01-VIN", "CU-01", "Viñales"),
+("CU-01-ARH", "CU-01", "Artemisa"),
+("CU-02-PLC", "CU-02", "Playa del Carmen"),
+("CU-02-GUA", "CU-02", "Guanimar"),
+("CU-03-RVC", "CU-03", "Reparto Voltios"),
+("CU-03-GTN", "CU-03", "Guanabo"),
+("CU-04-COL", "CU-04", "Colón"),
+("CU-04-VRB", "CU-04", "Varadero"),
+("CU-05-REM", "CU-05", "Remedios"),
+("CU-05-SCU", "CU-05", "Santa Clara"),
+("CU-06-CUM", "CU-06", "Cumanayagua"),
+("CU-06-CPF", "CU-06", "Cienfuegos"),
+("CU-07-TUN", "CU-07", "Trinidad"),
+("CU-07-SSP", "CU-07", "Sancti Spíritus"),
+("CU-08-MOR", "CU-08", "Morón"),
+("CU-08-CGA", "CU-08", "Ciego de Ávila"),
+("CU-09-CAM", "CU-09", "Camagüey"),
+("CU-09-NUE", "CU-09", "Nuevitas"),
+("CU-10-LSU", "CU-10", "Las Tunas"),
+("CU-10-MNS", "CU-10", "Manatí"),
+("CU-11-MOA", "CU-11", "Moa"),
+("CU-11-GTI", "CU-11", "Gibara"),
+("CU-12-HAB", "CU-12", "Holguín"),
+("CU-12-BRN", "CU-12", "Banes"),
+("CU-13-PAL", "CU-13", "Palma Soriano"),
+("CU-13-SNT", "CU-13", "Santiago de Cuba"),
+("CU-14-BAN", "CU-14", "Baracoa"),
+("CU-14-GTM", "CU-14", "Guantánamo");
+
+-- cyprus
+
+INSERT INTO countries VALUES 
+("CY", "EU", "Cyprus", "Nicosia");
+
+INSERT INTO states VALUES
+("CY-01", "CY", "Nicosia District"),
+("CY-02", "CY", "Famagusta District"),
+("CY-03", "CY", "Kyrenia District"),
+("CY-04", "CY", "Larnaca District"),
+("CY-05", "CY", "Limassol District"),
+("CY-06", "CY", "Paphos District");
+
+-- Adding more cities in Cyprus
+INSERT INTO cities VALUES
+("CY-01-STV", "CY-01", "Stavrou"),
+("CY-01-LKF", "CY-01", "Lakatamia"),
+("CY-02-DIP", "CY-02", "Deryneia"),
+("CY-02-SOT", "CY-02", "Sotira"),
+("CY-03-ALS", "CY-03", "Alsancak"),
+("CY-03-LEF", "CY-03", "Lefka"),
+("CY-04-ALR", "CY-04", "Alethriko"),
+("CY-04-KAT", "CY-04", "Kato Larnaca"),
+("CY-05-GSO", "CY-05", "GSO - Germasogeia"),
+("CY-05-AYT", "CY-05", "Ayios Tychonas"),
+("CY-06-GEO", "CY-06", "Geroskipou"),
+("CY-06-KTO", "CY-06", "Ktima - Paphos"),
+("CY-06-PLC", "CY-06", "Polemi"),
+("CY-01-NC", "CY-01", "Nicosia"),
+("CY-01-SL", "CY-01", "Strovolos"),
+("CY-02-PN", "CY-02", "Paralimni"),
+("CY-02-AY", "CY-02", "Ayia Napa"),
+("CY-03-KR", "CY-03", "Kyrenia"),
+("CY-03-CAT", "CY-03", "Catalkoy"),
+("CY-04-LCA", "CY-04", "Larnaca"),
+("CY-04-AR", "CY-04", "Aradippou"),
+("CY-05-LMS", "CY-05", "Limassol"),
+("CY-05-KR", "CY-05", "Kourion"),
+("CY-06-PFO", "CY-06", "Paphos"),
+("CY-06-PSO", "CY-06", "Polis Chrysochous");
+
+-- czechia
+
+INSERT INTO countries VALUES 
+("CZ", "EU", "Czechia", "Prague");
+
+INSERT INTO states VALUES
+("CZ-PR", "CZ", "Prague"),
+("CZ-CB", "CZ", "Central Bohemia"),
+("CZ-SC", "CZ", "South Bohemia"),
+("CZ-PL", "CZ", "Plzeň"),
+("CZ-KA", "CZ", "Karlovy Vary"),
+("CZ-US", "CZ", "Ústí nad Labem"),
+("CZ-LI", "CZ", "Liberec"),
+("CZ-HK", "CZ", "Hradec Králové"),
+("CZ-PA", "CZ", "Pardubice"),
+("CZ-VY", "CZ", "Vysočina"),
+("CZ-JM", "CZ", "South Moravia"),
+("CZ-ZL", "CZ", "Zlín"),
+("CZ-MS", "CZ", "Moravian-Silesian");
+
+INSERT INTO cities VALUES
+("CZ-PR-CK", "CZ-PR", "Černošice"),
+("CZ-PR-KR", "CZ-PR", "Kralupy nad Vltavou"),
+("CZ-CB-TR", "CZ-CB", "Třeboň"),
+("CZ-CB-JI", "CZ-CB", "Jindřichův Hradec"),
+("CZ-SC-CB", "CZ-SC", "České Budějovice"),
+("CZ-SC-TR", "CZ-SC", "Třeboň"),
+("CZ-PL-RO", "CZ-PL", "Rokycany"),
+("CZ-PL-KV", "CZ-PL", "Klatovy"),
+("CZ-KA-FO", "CZ-KA", "Františkovy Lázně"),
+("CZ-KA-KA", "CZ-KA", "Karlovy Vary"),
+("CZ-US-LI", "CZ-US", "Litoměřice"),
+("CZ-US-DE", "CZ-US", "Děčín"),
+("CZ-LI-JA", "CZ-LI", "Jablonec nad Nisou"),
+("CZ-LI-LI", "CZ-LI", "Liberec"),
+("CZ-HK-RA", "CZ-HK", "Ratiboř"),
+("CZ-HK-TR", "CZ-HK", "Trutnov"),
+("CZ-PA-PA", "CZ-PA", "Pardubice"),
+("CZ-PA-CR", "CZ-PA", "Chrudim"),
+("CZ-VY-TB", "CZ-VY", "Třebíč"),
+("CZ-VY-HV", "CZ-VY", "Havlíčkův Brod"),
+("CZ-JM-ZN", "CZ-JM", "Znojmo"),
+("CZ-JM-TI", "CZ-JM", "Třebíč"),
+("CZ-ZL-OV", "CZ-ZL", "Ostrava"),
+("CZ-ZL-KV", "CZ-ZL", "Karviná"),
+("CZ-MS-FR", "CZ-MS", "Frýdek-Místek"),
+("CZ-MS-KA", "CZ-MS", "Karviná");
+
+-- denmark
+
+INSERT INTO countries VALUES 
+("DK", "EU", "Denmark", "Copenhagen");
+
+INSERT INTO states VALUES
+("DK-84", "DK", "Capital Region of Denmark"),
+("DK-81", "DK", "Central Denmark Region"),
+("DK-82", "DK", "Region of Southern Denmark"),
+("DK-83", "DK", "North Denmark Region"),
+("DK-85", "DK", "Zealand");
+
+INSERT INTO cities VALUES
+("DK-84-CPH", "DK-84", "Copenhagen"),
+("DK-81-AAR", "DK-81", "Aarhus"),
+("DK-81-SKB", "DK-81", "Skanderborg"),
+("DK-82-ODN", "DK-82", "Odense"),
+("DK-82-SVI", "DK-82", "Svendborg"),
+("DK-83-AAL", "DK-83", "Aalborg"),
+("DK-83-HOR", "DK-83", "Horsens"),
+("DK-85-RSL", "DK-85", "Roskilde"),
+("DK-85-KOE", "DK-85", "Køge"),
+("DK-85-HOL", "DK-85", "Holbæk"),
+("DK-84-HIL", "DK-84", "Hillerød"),
+("DK-84-FRB", "DK-84", "Frederiksberg"),
+("DK-81-VEJ", "DK-81", "Vejle"),
+("DK-81-SIL", "DK-81", "Silkeborg"),
+("DK-82-MID", "DK-82", "Middelfart"),
+("DK-82-KER", "DK-82", "Kerteminde"),
+("DK-83-HJO", "DK-83", "Hjørring"),
+("DK-83-FRE", "DK-83", "Frederikshavn"),
+("DK-85-NST", "DK-85", "Næstved"),
+("DK-85-RNG", "DK-85", "Ringsted"),
+("DK-85-SOR", "DK-85", "Sorø");
+
+-- Djibouti
+
+INSERT INTO countries VALUES 
+("DJ", "AF", "Djibouti", "Djibouti City");
+
+INSERT INTO states VALUES
+("DJ-AS", "DJ", "Ali Sabieh"),
+("DJ-AR", "DJ", "Arta"),
+("DJ-DI", "DJ", "Dikhil"),
+("DJ-OB", "DJ", "Obock"),
+("DJ-TA", "DJ", "Tadjourah");
+
+INSERT INTO cities VALUES
+("DJ-AS-AS", "DJ-AS", "Ali Sabieh"),
+("DJ-AR-AR", "DJ-AR", "Arta"),
+("DJ-DI-DI", "DJ-DI", "Dikhil"),
+("DJ-OB-OB", "DJ-OB", "Obock"),
+("DJ-TA-TA", "DJ-TA", "Tadjourah"),
+("DJ-DJ-DJ", "DJ", "Djibouti City"),
+("DJ-AS-HOO", "DJ-AS", "Holhol"),
+("DJ-AR-ALI", "DJ-AR", "Ali Adde"),
+("DJ-DI-DOU", "DJ-DI", "Douda"),
+("DJ-OB-TAJ", "DJ-OB", "Tajoura"),
+("DJ-TA-BAL", "DJ-TA", "Balho"),
+("DJ-DJ-BAL", "DJ", "Balbala");
+
+-- dominica
+
+INSERT INTO countries VALUES 
+("DM", "NA", "Dominica", "Roseau");
+
+INSERT INTO states VALUES
+("DM-01", "DM", "Saint Andrew"),
+("DM-02", "DM", "Saint David"),
+("DM-03", "DM", "Saint George"),
+("DM-04", "DM", "Saint John"),
+("DM-05", "DM", "Saint Joseph"),
+("DM-06", "DM", "Saint Luke"),
+("DM-07", "DM", "Saint Mark"),
+("DM-08", "DM", "Saint Patrick");
+
+INSERT INTO cities VALUES
+("DM-01-PO", "DM-01", "Pont Casse"),
+("DM-02-GR", "DM-02", "Grand Fond"),
+("DM-02-PS", "DM-02", "Petite Soufrière"),
+("DM-03-MA", "DM-03", "Mero"),
+("DM-03-PO", "DM-03", "Portsmouth"),
+("DM-04-CA", "DM-04", "Calibishie"),
+("DM-04-FO", "DM-04", "Portsmouth"),
+("DM-05-BA", "DM-05", "Berekua"),
+("DM-05-DO", "DM-05", "Dos d'Ane"),
+("DM-06-VI", "DM-06", "Vieille Case"),
+("DM-06-TH", "DM-06", "Thibaud"),
+("DM-07-DA", "DM-07", "Delices"),
+("DM-07-MA", "DM-07", "Morne Jaune"),
+("DM-08-MA", "DM-08", "Mahaut"),
+("DM-08-SO", "DM-08", "Salybia");
+
+-- dominican republic
+
+INSERT INTO countries VALUES 
+("DO", "NA", "Dominican Republic", "Santo Domingo");
+
+INSERT INTO states VALUES
+("DO-01", "DO", "Distrito Nacional"),
+("DO-02", "DO", "Azua"),
+("DO-03", "DO", "Baoruco"),
+("DO-04", "DO", "Barahona"),
+("DO-05", "DO", "Dajabón"),
+("DO-06", "DO", "Duarte"),
+("DO-07", "DO", "Elías Piña"),
+("DO-08", "DO", "El Seibo"),
+("DO-09", "DO", "Espaillat"),
+("DO-10", "DO", "Independencia"),
+("DO-11", "DO", "La Altagracia"),
+("DO-12", "DO", "La Romana"),
+("DO-13", "DO", "La Vega"),
+("DO-14", "DO", "María Trinidad Sánchez"),
+("DO-15", "DO", "Monte Cristi"),
+("DO-16", "DO", "Pedernales"),
+("DO-17", "DO", "Peravia"),
+("DO-18", "DO", "Puerto Plata"),
+("DO-19", "DO", "Hermanas Mirabal"),
+("DO-20", "DO", "Samaná"),
+("DO-21", "DO", "San Cristóbal"),
+("DO-22", "DO", "San Juan"),
+("DO-23", "DO", "San Pedro de Macorís"),
+("DO-24", "DO", "Sánchez Ramírez"),
+("DO-25", "DO", "Santiago"),
+("DO-26", "DO", "Santiago Rodríguez"),
+("DO-27", "DO", "Valverde");
+
+INSERT INTO cities VALUES
+("DO-01-EP", "DO-01", "Ensanche Paraíso"),
+("DO-01-GZ", "DO-01", "Gazcue"),
+("DO-02-GU", "DO-02", "Guayabal"),
+("DO-02-PA", "DO-02", "Padre Las Casas"),
+("DO-03-GA", "DO-03", "Galván"),
+("DO-03-NG", "DO-03", "Los Ríos"),
+("DO-04-VI", "DO-04", "Vicente Noble"),
+("DO-04-PA", "DO-04", "Paraíso"),
+("DO-05-LA", "DO-05", "Loma de Cabrera"),
+("DO-05-PR", "DO-05", "Partido"),
+("DO-06-SN", "DO-06", "San Ignacio de Sabaneta"),
+("DO-06-VT", "DO-06", "Villa Tapia"),
+("DO-07-EL", "DO-07", "El Llano"),
+("DO-07-HO", "DO-07", "Hondo Valle"),
+("DO-08-EE", "DO-08", "El Seibo"),
+("DO-08-HI", "DO-08", "Higüey"),
+("DO-09-MA", "DO-09", "Moca"),
+("DO-09-JG", "DO-09", "Jánico"),
+("DO-10-BO", "DO-10", "Bánica"),
+("DO-10-GU", "DO-10", "Galván"),
+("DO-11-HI", "DO-11", "Higüey"),
+("DO-11-LI", "DO-11", "La Otra Banda"),
+("DO-12-LR", "DO-12", "La Romana"),
+("DO-12-GV", "DO-12", "Guaymate"),
+("DO-13-BR", "DO-13", "Bonao"),
+("DO-13-CL", "DO-13", "Concepción de La Vega"),
+("DO-14-CA", "DO-14", "Cabrera"),
+("DO-14-NG", "DO-14", "Nagua"),
+("DO-15-CA", "DO-15", "Castillo"),
+("DO-15-GU", "DO-15", "Guayubín"),
+("DO-16-BA", "DO-16", "Bahoruco"),
+("DO-16-OV", "DO-16", "Oviedo"),
+("DO-17-AZ", "DO-17", "Azua"),
+("DO-17-SA", "DO-17", "Sabana Yegua"),
+("DO-18-IM", "DO-18", "Imbert"),
+("DO-18-LA", "DO-18", "Luperón"),
+("DO-19-TE", "DO-19", "Tenares"),
+("DO-19-VP", "DO-19", "Villa de Padre Las Casas"),
+("DO-20-SC", "DO-20", "Santa Cruz de El Seibo"),
+("DO-20-HE", "DO-20", "Higüey"),
+("DO-21-BM", "DO-21", "Baní"),
+("DO-21-NA", "DO-21", "Nizao"),
+("DO-22-SJ", "DO-22", "San Juan de la Maguana"),
+("DO-22-EA", "DO-22", "El Cercado"),
+("DO-23-BE", "DO-23", "Boca Chica"),
+("DO-23-CO", "DO-23", "Consuelo"),
+("DO-24-CO", "DO-24", "Cotuí"),
+("DO-24-FC", "DO-24", "Fantino"),
+("DO-25-ST", "DO-25", "Santiago de los Caballeros"),
+("DO-25-LL", "DO-25", "Licey al Medio"),
+("DO-26-ST", "DO-26", "San Ignacio de Sabaneta"),
+("DO-26-MO", "DO-26", "Monción"),
+("DO-27-MO", "DO-27", "Mao"),
+("DO-27-ES", "DO-27", "Esperanza");
+
+-- dutchy of parma
+
+INSERT INTO countries VALUES 
+("DU", "EU", "Duchy of Parma", "Parma");
+
+INSERT INTO states VALUES
+("DU-01", "DU", "Parma City"),
+("DU-02", "DU", "Reggio Emilia"),
+("DU-03", "DU", "Piacenza");
+
+INSERT INTO cities VALUES
+("DU-01-CIT1", "DU-01", "City1 in Parma"),
+("DU-01-CIT2", "DU-01", "City2 in Parma"),
+("DU-02-CIT1", "DU-02", "City1 in Reggio Emilia"),
+("DU-02-CIT2", "DU-02", "City2 in Reggio Emilia"),
+("DU-03-CIT1", "DU-03", "City1 in Piacenza"),
+("DU-03-CIT2", "DU-03", "City2 in Piacenza");
+
+-- ecuador
+
+INSERT INTO countries VALUES 
+("EC", "SA", "Ecuador", "Quito");
+
+INSERT INTO states VALUES
+("EC-A", "EC", "Azuay"),
+("EC-B", "EC", "Bolívar"),
+("EC-F", "EC", "Cañar"),
+("EC-C", "EC", "Carchi"),
+("EC-H", "EC", "Chimborazo"),
+("EC-X", "EC", "Cotopaxi"),
+("EC-O", "EC", "El Oro"),
+("EC-E", "EC", "Esmeraldas"),
+("EC-W", "EC", "Galápagos"),
+("EC-G", "EC", "Guayas"),
+("EC-I", "EC", "Imbabura"),
+("EC-L", "EC", "Loja"),
+("EC-R", "EC", "Los Ríos"),
+("EC-M", "EC", "Manabí"),
+("EC-S", "EC", "Morona Santiago"),
+("EC-N", "EC", "Napo"),
+("EC-D", "EC", "Orellana"),
+("EC-Y", "EC", "Pastaza"),
+("EC-P", "EC", "Pichincha"),
+("EC-SE", "EC", "Santa Elena"),
+("EC-SD", "EC", "Santo Domingo de los Tsáchilas"),
+("EC-U", "EC", "Sucumbíos"),
+("EC-T", "EC", "Tungurahua"),
+("EC-Z", "EC", "Zamora-Chinchipe");
+
+INSERT INTO cities VALUES
+("EC-P-QUI", "EC-P", "Quito"),
+("EC-G-GYE", "EC-G", "Guayaquil"),
+("EC-A-CUE", "EC-A", "Cuenca"),
+("EC-M-MAN", "EC-M", "Manta"),
+("EC-H-RIO", "EC-H", "Riobamba"),
+("EC-L-LOJ", "EC-L", "Loja"),
+("EC-S-MAC", "EC-S", "Macas"),
+("EC-O-MAC", "EC-O", "Machala"),
+("EC-T-AMB", "EC-T", "Ambato"),
+("EC-C-TUL", "EC-C", "Tulcán"),
+("EC-E-EST", "EC-E", "Esmeraldas"),
+("EC-W-PUE", "EC-W", "Puerto Baquerizo Moreno"),
+("EC-SD-SDE", "EC-SD", "Santa Elena"),
+("EC-N-TNP", "EC-N", "Tena"),
+("EC-D-PUI", "EC-D", "Puerto Francisco de Orellana"),
+("EC-P-SBC", "EC-P", "Sangolquí"),
+("EC-G-DUR", "EC-G", "Durán"),
+("EC-A-AZG", "EC-A", "Azogues"),
+("EC-M-PIO", "EC-M", "Portoviejo"),
+("EC-O-ACH", "EC-O", "Achacachi"),
+("EC-T-PTO", "EC-T", "Píllaro"),
+("EC-C-MON", "EC-C", "Montúfar"),
+("EC-E-ATA", "EC-E", "Atacames"),
+("EC-W-PUV", "EC-W", "Puerto Villamil"),
+("EC-SD-SAL", "EC-SD", "Salinas"),
+("EC-N-PAN", "EC-N", "Pano"),
+("EC-D-PUY", "EC-D", "Puyo");
+
+-- egypt
+
+INSERT INTO countries VALUES 
+("EG", "AF", "Egypt", "Cairo");
+
+INSERT INTO states VALUES
+("EG-C", "EG", "Cairo"),
+("EG-AZ", "EG", "Alexandria"),
+("EG-SHR", "EG", "Sharqia"),
+("EG-BNS", "EG", "Beni Suef"),
+("EG-FYM", "EG", "Fayoum"),
+("EG-GZ", "EG", "Giza"),
+("EG-IS", "EG", "Ismailia"),
+("EG-MNF", "EG", "Monufia"),
+("EG-MN", "EG", "Minya"),
+("EG-CNF", "EG", "Qena"),
+("EG-LX", "EG", "Luxor"),
+("EG-ASN", "EG", "Aswan"),
+("EG-ASY", "EG", "Asyut"),
+("EG-BA", "EG", "Beheira"),
+("EG-DK", "EG", "Dakahlia"),
+("EG-DT", "EG", "Damietta"),
+("EG-JS", "EG", "South Sinai"),
+("EG-KB", "EG", "Kafr El Sheikh"),
+("EG-MT", "EG", "Matrouh"),
+("EG-MNQ", "EG", "Menoufia"),
+("EG-KFS", "EG", "North Sinai"),
+("EG-PTS", "EG", "Port Said"),
+("EG-QLY", "EG", "Qalyubia"),
+("EG-RKD", "EG", "Red Sea"),
+("EG-SHRQ", "EG", "Sohag");
+
+INSERT INTO cities VALUES
+("EG-C-CAI", "EG-C", "Cairo"),
+("EG-AZ-ALX", "EG-AZ", "Alexandria"),
+("EG-SHR-ZAG", "EG-SHR", "Zagazig"),
+("EG-BNS-BEN", "EG-BNS", "Beni Suef"),
+("EG-FYM-FAY", "EG-FYM", "Fayoum"),
+("EG-GZ-GIZ", "EG-GZ", "Giza"),
+("EG-IS-ISM", "EG-IS", "Ismailia"),
+("EG-MNF-SHE", "EG-MNF", "Shebin El Kom"),
+("EG-MN-MIN", "EG-MN", "Minya"),
+("EG-CNF-QNA", "EG-CNF", "Qena"),
+("EG-LX-LXR", "EG-LX", "Luxor"),
+("EG-ASN-ASW", "EG-ASN", "Aswan"),
+("EG-ASY-ASY", "EG-ASY", "Asyut"),
+("EG-BA-DAM", "EG-BA", "Damanhur"),
+("EG-DK-DKY", "EG-DK", "Dakahlia"),
+("EG-DT-DAM", "EG-DT", "Damietta"),
+("EG-JS-SHRM", "EG-JS", "Sharm El Sheikh"),
+("EG-KB-KFS", "EG-KB", "Kafr El Sheikh"),
+("EG-MT-MAR", "EG-MT", "Marsa Matruh"),
+("EG-MNQ-SHE", "EG-MNQ", "Sheikh Zayed"),
+("EG-KFS-ARH", "EG-KFS", "Arish"),
+("EG-PTS-PSA", "EG-PTS", "Port Said"),
+("EG-QLY-BAN", "EG-QLY", "Banha"),
+("EG-RKD-HUR", "EG-RKD", "Hurghada"),
+("EG-SHRQ-SOH", "EG-SHRQ", "Sohag"),
+("EG-C-HEL", "EG-C", "Heliopolis"),
+("EG-C-MAA", "EG-C", "Maadi"),
+("EG-AZ-RTB", "EG-AZ", "Ramleh Station"),
+("EG-AZ-ASR", "EG-AZ", "Al Shatby"),
+("EG-SHR-ZQZ", "EG-SHR", "Zaqaziq"),
+("EG-SHR-BLN", "EG-SHR", "Belbeis"),
+("EG-BNS-BNS", "EG-BNS", "Beni Suef"),
+("EG-BNS-BFS", "EG-BNS", "Beni Suef City"),
+("EG-FYM-FYM", "EG-FYM", "Fayoum City"),
+("EG-FYM-MDR", "EG-FYM", "Madinat Al Fayoum"),
+("EG-GZ-GZA", "EG-GZ", "Giza City"),
+("EG-GZ-6OC", "EG-GZ", "6th of October City"),
+("EG-IS-ISM", "EG-IS", "Ismailia City"),
+("EG-IS-FAK", "EG-IS", "Fayed"),
+("EG-MNF-QLN", "EG-MNF", "Qallin"),
+("EG-MN-SAM", "EG-MN", "Samalut"),
+("EG-CNF-QFC", "EG-CNF", "Qift"),
+("EG-LX-LXR", "EG-LX", "Luxor City"),
+("EG-ASN-KBS", "EG-ASN", "Kom Ombo"),
+("EG-ASN-ESN", "EG-ASN", "Edfu"),
+("EG-ASY-ASY", "EG-ASY", "Asyut City"),
+("EG-ASY-ABN", "EG-ASY", "Abnub"),
+("EG-BA-BAN", "EG-BA", "Banha"),
+("EG-BA-DKH", "EG-BA", "Dekernes"),
+("EG-DK-DMN", "EG-DK", "Damietta City"),
+("EG-DK-RNS", "EG-DK", "Rosetta"),
+("EG-JS-NSB", "EG-JS", "Nuweiba"),
+("EG-KB-DEB", "EG-KB", "Desouk"),
+("EG-KB-RS", "EG-KB", "Ras El Bar"),
+("EG-MT-MRA", "EG-MT", "Marsa Matruh City"),
+("EG-MNQ-6OC", "EG-MNQ", "6th of October City"),
+("EG-KFS-ARH", "EG-KFS", "Arish"),
+("EG-PTS-PSA", "EG-PTS", "Port Said City"),
+("EG-PTS-PMS", "EG-PTS", "Port Fuad"),
+("EG-QLY-BAN", "EG-QLY", "Banha"),
+("EG-QLY-QAH", "EG-QLY", "Qaha"),
+("EG-RKD-HUR", "EG-RKD", "Hurghada"),
+("EG-RKD-QUS", "EG-RKD", "Quseir"),
+("EG-SHRQ-AKH", "EG-SHRQ", "Akhmim"),
+("EG-SHRQ-GIR", "EG-SHRQ", "Girga");
+
+-- el salvador
+
+INSERT INTO countries VALUES 
+("SV", "NA", "El Salvador", "San Salvador");
+
+INSERT INTO states VALUES
+("SV-AH", "SV", "Ahuachapán"),
+("SV-CA", "SV", "Cabañas"),
+("SV-CH", "SV", "Chalatenango"),
+("SV-CU", "SV", "Cuscatlán"),
+("SV-LI", "SV", "La Libertad"),
+("SV-PA", "SV", "La Paz"),
+("SV-UN", "SV", "La Unión"),
+("SV-MO", "SV", "Morazán"),
+("SV-SA", "SV", "San Miguel"),
+("SV-SS", "SV", "San Salvador"),
+("SV-SV", "SV", "San Vicente"),
+("SV-SM", "SV", "Santa Ana"),
+("SV-SO", "SV", "Sonsonate"),
+("SV-US", "SV", "Usulután");
+
+INSERT INTO cities VALUES
+("SV-AH-SON", "SV-AH", "Sonsonate"),
+("SV-AH-APA", "SV-AH", "Apaneca"),
+("SV-CA-ITZ", "SV-CA", "Izalco"),
+("SV-CA-SAN", "SV-CA", "San Isidro"),
+("SV-CH-AGU", "SV-CH", "Aguilares"),
+("SV-CH-ESA", "SV-CH", "Esperanza"),
+("SV-CU-ITJ", "SV-CU", "Ilopango"),
+("SV-CU-DEL", "SV-CU", "Delgado"),
+("SV-LI-ANT", "SV-LI", "Antiguo Cuscatlán"),
+("SV-LI-OPC", "SV-LI", "Opico"),
+("SV-PA-DEL", "SV-PA", "Delgado"),
+("SV-PA-SAN", "SV-PA", "San Juan Tepezontes"),
+("SV-UN-CON", "SV-UN", "Concepción de Oriente"),
+("SV-UN-ELT", "SV-UN", "El Tamarindo"),
+("SV-MO-GUR", "SV-MO", "Guatajiagua"),
+("SV-MO-DCS", "SV-MO", "Delicias de Concepción"),
+("SV-SA-CHI", "SV-SA", "Chinameca"),
+("SV-SA-COT", "SV-SA", "Coatepeque"),
+("SV-SS-MER", "SV-SS", "Merliot"),
+("SV-SS-ANT", "SV-SS", "Antiguo Cuscatlán"),
+("SV-SV-VER", "SV-SV", "Verapaz"),
+("SV-SV-CAN", "SV-SV", "Ciudad Arce"),
+("SV-SM-ATQ", "SV-SM", "Atiquizaya"),
+("SV-SM-NLV", "SV-SM", "Nueva San Salvador"),
+("SV-SO-ILO", "SV-SO", "Ilopango"),
+("SV-US-EPA", "SV-US", "Ereguayquín");
+
+-- equitoial guinea
+
+INSERT INTO countries VALUES 
+("GQ", "AF", "Equatorial Guinea", "Malabo");
+
+INSERT INTO states VALUES
+("GQ-AN", "GQ", "Annobón"),
+("GQ-BN", "GQ", "Bioko Norte"),
+("GQ-BS", "GQ", "Bioko Sur"),
+("GQ-C", "GQ", "Centro Sur"),
+("GQ-CD", "GQ", "Ciudad de Malabo"),
+("GQ-CL", "GQ", "Litoral"),
+("GQ-KN", "GQ", "Kié-Ntem"),
+("GQ-I", "GQ", "Insular"),
+("GQ-W", "GQ", "Wele-Nzás");
+
+INSERT INTO cities VALUES
+("GQ-AN-RIY", "GQ-AN", "Riaba"),
+("GQ-BN-BAN", "GQ-BN", "Baney"),
+("GQ-BS-BAS", "GQ-BS", "Basupú"),
+("GQ-C-AAC", "GQ-C", "Aconibe"),
+("GQ-CD-MAL", "GQ-CD", "Malabo"),
+("GQ-CL-COC", "GQ-CL", "Cocobeach"),
+("GQ-KN-MIK", "GQ-KN", "Micomeseng"),
+("GQ-I-ANM", "GQ-I", "Annobón"),
+("GQ-W-MIC", "GQ-W", "Micomeseng"),
+("GQ-AN-ANS", "GQ-AN", "San Antonio Sur"),
+("GQ-BN-RIO", "GQ-BN", "Riaba"),
+("GQ-BS-PAL", "GQ-BS", "Palé"),
+("GQ-C-ACE", "GQ-C", "Aconibe"),
+("GQ-CD-BAN", "GQ-CD", "Baney"),
+("GQ-CL-BAT", "GQ-CL", "Batete"),
+("GQ-KN-NKI", "GQ-KN", "Nkimi"),
+("GQ-I-SAN", "GQ-I", "San Antonio de Palé"),
+("GQ-W-NKO", "GQ-W", "Nsok Nsomo");
+
+-- eritrea
+
+INSERT INTO countries VALUES 
+("ER", "AF", "Eritrea", "Asmara");
+
+INSERT INTO states VALUES
+("ER-AN", "ER", "Anseba"),
+("ER-DK", "ER", "Debub-Keih-Bahri"),
+("ER-DU", "ER", "Debub"),
+("ER-GB", "ER", "Gash-Barka"),
+("ER-MA", "ER", "Maekel"),
+("ER-SK", "ER", "Semenawi Keyih Bahri");
+
+INSERT INTO cities VALUES
+("ER-AN-ADI", "ER-AN", "Adi Tekelezan"),
+("ER-AN-HAG", "ER-AN", "Hagaz"),
+("ER-DK-ASS", "ER-DK", "Assab"),
+("ER-DK-TIO", "ER-DK", "Tio"),
+("ER-DU-MEN", "ER-DU", "Mendefera"),
+("ER-DU-ADI", "ER-DU", "Adi Quala"),
+("ER-GB-AGR", "ER-GB", "Agordat"),
+("ER-GB-BAR", "ER-GB", "Barentu"),
+("ER-MA-ASM", "ER-MA", "Asmara"),
+("ER-MA-KER", "ER-MA", "Keren"),
+("ER-SK-ASM", "ER-SK", "Asmara"),
+("ER-SK-ASM", "ER-SK", "Asmara"),
+("ER-SK-ASM", "ER-SK", "Asmara"),
+("ER-SK-ASM", "ER-SK", "Asmara"),
+("ER-SK-ASM", "ER-SK", "Asmara");
+
+-- estonia
+
+INSERT INTO countries VALUES 
+("EE", "EU", "Estonia", "Tallinn");
+
+INSERT INTO states VALUES
+("EE-HAR", "EE", "Harju County"),
+("EE-HII", "EE", "Hiiu County"),
+("EE-IDA", "EE", "Ida-Viru County"),
+("EE-JÕE", "EE", "Jõgeva County"),
+("EE-JÄR", "EE", "Järva County"),
+("EE-LÄÄ", "EE", "Lääne County"),
+("EE-LNE", "EE", "Lääne-Viru County"),
+("EE-PÕL", "EE", "Põlva County"),
+("EE-PÄR", "EE", "Pärnu County"),
+("EE-RAP", "EE", "Rapla County"),
+("EE-SAA", "EE", "Saare County"),
+("EE-TAR", "EE", "Tartu County"),
+("EE-VAL", "EE", "Valga County"),
+("EE-VIL", "EE", "Viljandi County"),
+("EE-VIR", "EE", "Võru County");
+
+INSERT INTO cities VALUES
+("EE-HAR-TLN", "EE-HAR", "Tallinn"),
+("EE-HAR-KEI", "EE-HAR", "Keila"),
+("EE-HAR-MAA", "EE-HAR", "Maardu"),
+("EE-HAR-HAR", "EE-HAR", "Harku"),
+("EE-HAR-VII", "EE-HAR", "Viimsi"),
+("EE-HAR-RAE", "EE-HAR", "Rae"),
+("EE-HII-KHI", "EE-HII", "Kärdla"),
+("EE-IDA-NAR", "EE-IDA", "Narva"),
+("EE-IDA-JÕH", "EE-IDA", "Jõhvi"),
+("EE-IDA-SIL", "EE-IDA", "Sillamäe"),
+("EE-JÕE-JÕH", "EE-JÕE", "Jõhvi"),
+("EE-JÕE-TÄR", "EE-JÕE", "Tartu-Jõhvi"),
+("EE-JÄR-PÄR", "EE-JÄR", "Pärnu"),
+("EE-JÄR-VIG", "EE-JÄR", "Vigala"),
+("EE-LÄÄ-HAA", "EE-LÄÄ", "Haapsalu"),
+("EE-LÄÄ-RID", "EE-LÄÄ", "Ridala"),
+("EE-LNE-RJK", "EE-LNE", "Rakvere"),
+("EE-LNE-HAL", "EE-LNE", "Haljala"),
+("EE-PÕL-PÕL", "EE-PÕL", "Põlva"),
+("EE-PÕL-ANT", "EE-PÕL", "Antsla"),
+("EE-PÄR-PÄR", "EE-PÄR", "Pärnu"),
+("EE-PÄR-HÄÄ", "EE-PÄR", "Häädemeeste"),
+("EE-RAP-RPL", "EE-RAP", "Rapla"),
+("EE-RAP-KEH", "EE-RAP", "Kehtna"),
+("EE-SAA-KUR", "EE-SAA", "Kuressaare"),
+("EE-SAA-SAL", "EE-SAA", "Salme"),
+("EE-TAR-TAR", "EE-TAR", "Tartu"),
+("EE-TAR-ELS", "EE-TAR", "Elva"),
+("EE-VAL-VAL", "EE-VAL", "Valga"),
+("EE-VAL-TÕR", "EE-VAL", "Tõrva"),
+("EE-VIL-VIL", "EE-VIL", "Viljandi"),
+("EE-VIR-VRU", "EE-VIR", "Võru"),
+("EE-VIR-JÕH", "EE-VIR", "Jõhvi");
+
+-- eswatini
+
+INSERT INTO countries VALUES 
+("SZ", "AF", "Eswatini", "Mbabane");
+
+INSERT INTO states VALUES
+("SZ-HH", "SZ", "Hhohho"),
+("SZ-LU", "SZ", "Lubombo"),
+("SZ-MA", "SZ", "Manzini"),
+("SZ-SH", "SZ", "Shiselweni");
+
+INSERT INTO cities VALUES
+("SZ-HH-MBA", "SZ-HH", "Mbabane"),
+("SZ-HH-PGG", "SZ-HH", "Pigg's Peak"),
+("SZ-HH-MHL", "SZ-HH", "Mhlambanyatsi"),
+("SZ-HH-NKR", "SZ-HH", "Nkoyoyo"),
+("SZ-HH-MAN", "SZ-HH", "Manzini"),
+("SZ-HH-KAF", "SZ-HH", "Kaphunga"),
+("SZ-HH-LUB", "SZ-HH", "Lubombo"),
+("SZ-HH-NGW", "SZ-HH", "Ngwenya"),
+("SZ-LU-LAV", "SZ-LU", "Lavumisa"),
+("SZ-LU-TSH", "SZ-LU", "Tshaneni"),
+("SZ-LU-BIG", "SZ-LU", "Big Bend"),
+("SZ-LU-MAT", "SZ-LU", "Matsapha"),
+("SZ-LU-MHA", "SZ-LU", "Mhala"),
+("SZ-LU-NHL", "SZ-LU", "Nhlangano"),
+("SZ-MA-MBA", "SZ-MA", "Manzini"),
+("SZ-MA-SRV", "SZ-MA", "Simunye"),
+("SZ-MA-MHL", "SZ-MA", "Mhlosheni"),
+("SZ-MA-MLM", "SZ-MA", "Mliba"),
+("SZ-MA-SF", "SZ-MA", "Siphofaneni"),
+("SZ-SH-MTS", "SZ-SH", "Nhlangano"),
+("SZ-SH-HOS", "SZ-SH", "Hlatikulu"),
+("SZ-SH-LAV", "SZ-SH", "Lavumisa"),
+("SZ-SH-PLA", "SZ-SH", "Pigg's Peak"),
+("SZ-SH-SIK", "SZ-SH", "Sikhupe");
+
+-- ethiopia
+
+INSERT INTO countries VALUES 
+("ET", "AF", "Ethiopia", "Addis Ababa");
+
+INSERT INTO states VALUES
+("ET-AA", "ET", "Addis Ababa"),
+("ET-AF", "ET", "Afar"),
+("ET-AM", "ET", "Amhara"),
+("ET-BE", "ET", "Benishangul-Gumuz"),
+("ET-DD", "ET", "Dire Dawa"),
+("ET-GA", "ET", "Gambela"),
+("ET-HA", "ET", "Harari"),
+("ET-OR", "ET", "Oromia"),
+("ET-SN", "ET", "Southern Nations, Nationalities, and Peoples'"),
+("ET-SO", "ET", "Somali"),
+("ET-TI", "ET", "Tigray");
+
+INSERT INTO cities VALUES
+("ET-AA-ADD", "ET-AA", "Addis Ababa"),
+("ET-AA-BOU", "ET-AA", "Bole"),
+("ET-AA-KIR", "ET-AA", "Kirkos"),
+("ET-AA-LID", "ET-AA", "Lideta"),
+("ET-AA-NAZ", "ET-AA", "Nefas Silk-Lafto"),
+("ET-AF-ASY", "ET-AF", "Asayita"),
+("ET-AF-SEM", "ET-AF", "Semera"),
+("ET-AF-DRE", "ET-AF", "Dredu"),
+("ET-AM-BHR", "ET-AM", "Bahir Dar"),
+("ET-AM-GON", "ET-AM", "Gondar"),
+("ET-AM-DMA", "ET-AM", "Dessie"),
+("ET-AM-DEB", "ET-AM", "Debre Berhan"),
+("ET-AM-DMS", "ET-AM", "Debre Markos"),
+("ET-BE-ASO", "ET-BE", "Asosa"),
+("ET-BE-DAW", "ET-BE", "Dawunt"),
+("ET-BE-PAW", "ET-BE", "Pawie"),
+("ET-BE-MET", "ET-BE", "Metu"),
+("ET-DD-DD", "ET-DD", "Dire Dawa"),
+("ET-GA-GAM", "ET-GA", "Gambela"),
+("ET-GA-ITU", "ET-GA", "Itang"),
+("ET-HA-JIJ", "ET-HA", "Jijiga"),
+("ET-HA-DEG", "ET-HA", "Degahabur"),
+("ET-HA-KEB", "ET-HA", "Kebri Dahar"),
+("ET-OR-ADR", "ET-OR", "Adama"),
+("ET-OR-NAG", "ET-OR", "Nagele"),
+("ET-OR-ARS", "ET-OR", "Arsi Negele"),
+("ET-OR-SHD", "ET-OR", "Shashamane"),
+("ET-OR-JIM", "ET-OR", "Jimma"),
+("ET-SN-HAW", "ET-SN", "Hawassa"),
+("ET-SN-DIL", "ET-SN", "Dilla"),
+("ET-SO-JIG", "ET-SO", "Jigjiga"),
+("ET-SO-KEB", "ET-SO", "Kebri Dahar"),
+("ET-SO-GUR", "ET-SO", "Gursum"),
+("ET-TI-ASM", "ET-TI", "Asmara"),
+("ET-TI-MEK", "ET-TI", "Mekelle"),
+("ET-TI-AKS", "ET-TI", "Adigrat");
+
+-- fiji
+
+INSERT INTO countries VALUES 
+("FJ", "OC", "Fiji", "Suva");
+
+INSERT INTO states VALUES
+("FJ-C", "FJ", "Central"),
+("FJ-E", "FJ", "Eastern"),
+("FJ-N", "FJ", "Northern"),
+("FJ-R", "FJ", "Rotuma"),
+("FJ-W", "FJ", "Western");
+
+INSERT INTO cities VALUES
+("FJ-C-SUV", "FJ-C", "Suva"),
+("FJ-C-NAS", "FJ-C", "Nausori"),
+("FJ-C-SAL", "FJ-C", "SAL"),
+("FJ-C-RAK", "FJ-C", "Rakiraki"),
+("FJ-C-TAV", "FJ-C", "Tavua"),
+("FJ-C-KOR", "FJ-C", "Korovou"),
+("FJ-C-NAV", "FJ-C", "Navua"),
+("FJ-C-LEV", "FJ-C", "Levuka"),
+("FJ-E-LEV", "FJ-E", "Levuka"),
+("FJ-E-KAD", "FJ-E", "Kadavu"),
+("FJ-E-LAK", "FJ-E", "Lakeba"),
+("FJ-N-LAU", "FJ-N", "Labasa"),
+("FJ-N-SAV", "FJ-N", "Savusavu"),
+("FJ-N-SEA", "FJ-N", "Seaqaqa"),
+("FJ-N-DRE", "FJ-N", "Dreketi"),
+("FJ-R-ROT", "FJ-R", "Oinafa"),
+("FJ-W-LAU", "FJ-W", "Lautoka"),
+("FJ-W-NAD", "FJ-W", "Nadi"),
+("FJ-W-BA", "FJ-W", "Ba"),
+("FJ-W-TAV", "FJ-W", "Tavua"),
+("FJ-W-RKI", "FJ-W", "Rakiraki");
+
+-- finland
+
+INSERT INTO countries VALUES 
+("FI", "EU", "Finland", "Helsinki");
+
+INSERT INTO states VALUES
+("FI-01", "FI", "Åland"),
+("FI-02", "FI", "South Karelia"),
+("FI-03", "FI", "Southern Ostrobothnia"),
+("FI-04", "FI", "Southern Savonia"),
+("FI-05", "FI", "Kainuu"),
+("FI-06", "FI", "Kanta-Häme"),
+("FI-07", "FI", "Central Ostrobothnia"),
+("FI-08", "FI", "Central Finland"),
+("FI-09", "FI", "Kymenlaakso"),
+("FI-10", "FI", "Lapland"),
+("FI-11", "FI", "Pirkanmaa"),
+("FI-12", "FI", "Ostrobothnia"),
+("FI-13", "FI", "North Karelia"),
+("FI-14", "FI", "Northern Ostrobothnia"),
+("FI-15", "FI", "Northern Savonia"),
+("FI-16", "FI", "Päijät-Häme"),
+("FI-17", "FI", "Satakunta"),
+("FI-18", "FI", "Uusimaa"),
+("FI-19", "FI", "Southwest Finland"),
+("FI-20", "FI", "Tavastia Proper");
+
+INSERT INTO cities VALUES
+("FI-18-HEL", "FI-18", "Helsinki"),
+("FI-18-ESP", "FI-18", "Espoo"),
+("FI-18-VAN", "FI-18", "Vantaa"),
+("FI-18-HEL", "FI-18", "Helsinki"),
+("FI-18-KAU", "FI-18", "Kauniainen"),
+("FI-01-MAR", "FI-01", "Mariehamn"),
+("FI-02-LAP", "FI-02", "Lappeenranta"),
+("FI-02-IMT", "FI-02", "Imatra"),
+("FI-03-SEA", "FI-03", "Seinäjoki"),
+("FI-03-KOU", "FI-03", "Kauhava"),
+("FI-04-MIK", "FI-04", "Mikkeli"),
+("FI-04-HAU", "FI-04", "Haapajärvi"),
+("FI-05-KAJ", "FI-05", "Kajaani"),
+("FI-05-OUL", "FI-05", "Oulainen"),
+("FI-06-FOR", "FI-06", "Forssa"),
+("FI-06-RII", "FI-06", "Riihimäki"),
+("FI-07-KAU", "FI-07", "Kauhajoki"),
+("FI-07-KOK", "FI-07", "Kokkola"),
+("FI-08-JYV", "FI-08", "Jyväskylä"),
+("FI-08-KEU", "FI-08", "Keuruu"),
+("FI-09-KOU", "FI-09", "Kouvola"),
+("FI-09-KOT", "FI-09", "Kotka"),
+("FI-10-ROV", "FI-10", "Rovaniemi"),
+("FI-10-TOR", "FI-10", "Tornio"),
+("FI-11-TAM", "FI-11", "Tampere"),
+("FI-11-KAN", "FI-11", "Kangasala"),
+("FI-12-VAA", "FI-12", "Vaasa"),
+("FI-12-SEI", "FI-12", "Seinäjoki"),
+("FI-13-JOE", "FI-13", "Joensuu"),
+("FI-13-KUH", "FI-13", "Kuhmo"),
+("FI-14-OUL", "FI-14", "Oulu"),
+("FI-14-KAJ", "FI-14", "Kajaani"),
+("FI-15-KUO", "FI-15", "Kuopio"),
+("FI-15-IIS", "FI-15", "Iisalmi"),
+("FI-16-LAH", "FI-16", "Lahti"),
+("FI-16-HEI", "FI-16", "Heinola"),
+("FI-17-POR", "FI-17", "Pori"),
+("FI-17-RAS", "FI-17", "Rauma"),
+("FI-19-TUR", "FI-19", "Turku"),
+("FI-19-NAU", "FI-19", "Naantali"),
+("FI-20-HAM", "FI-20", "Hämeenlinna"),
+("FI-20-RII", "FI-20", "Riihimäki");
+
+-- france
+
+INSERT INTO countries VALUES 
+("FR", "EU", "France", "Paris");
+
+INSERT INTO states VALUES
+("FR-ARA", "FR", "Auvergne-Rhône-Alpes"),
+("FR-BFC", "FR", "Bourgogne-Franche-Comté"),
+("FR-BRE", "FR", "Brittany"),
+("FR-CVL", "FR", "Centre-Val de Loire"),
+("FR-COR", "FR", "Corsica"),
+("FR-GES", "FR", "Grand Est"),
+("FR-HDF", "FR", "Hauts-de-France"),
+("FR-IDF", "FR", "Île-de-France"),
+("FR-NAQ", "FR", "Nouvelle-Aquitaine"),
+("FR-OCC", "FR", "Occitanie"),
+("FR-PDL", "FR", "Pays de la Loire"),
+("FR-PAC", "FR", "Provence-Alpes-Côte d'Azur"),
+("FR-GF", "FR", "French Guiana"),
+("FR-GP", "FR", "Guadeloupe"),
+("FR-MQ", "FR", "Martinique"),
+("FR-RE", "FR", "Réunion"),
+("FR-YT", "FR", "Mayotte");
+
+INSERT INTO cities VALUES
+("FR-IDF-PAR", "FR-IDF", "Paris"),
+("FR-IDF-MAR", "FR-IDF", "Marseille"),
+("FR-IDF-LYO", "FR-IDF", "Lyon"),
+("FR-IDF-TLS", "FR-IDF", "Toulouse"),
+("FR-IDF-NCE", "FR-IDF", "Nice"),
+("FR-IDF-STR", "FR-IDF", "Strasbourg"),
+("FR-IDF-NAN", "FR-IDF", "Nantes"),
+("FR-IDF-MON", "FR-IDF", "Montpellier"),
+("FR-IDF-BOD", "FR-IDF", "Bordeaux"),
+("FR-IDF-LIL", "FR-IDF", "Lille"),
+("FR-IDF-REN", "FR-IDF", "Rennes"),
+("FR-IDF-ROU", "FR-IDF", "Rouen"),
+("FR-ARA-LYO", "FR-ARA", "Lyon"),
+("FR-ARA-SSE", "FR-ARA", "Saint-Étienne"),
+("FR-ARA-GLD", "FR-ARA", "Grenoble"),
+("FR-ARA-DIJ", "FR-ARA", "Dijon"),
+("FR-ARA-VIE", "FR-ARA", "Vienne"),
+("FR-BFC-DIJ", "FR-BFC", "Dijon"),
+("FR-BFC-BES", "FR-BFC", "Besançon"),
+("FR-BFC-BRX", "FR-BFC", "Belfort"),
+("FR-BFC-NEV", "FR-BFC", "Nevers"),
+("FR-BRE-RNS", "FR-BRE", "Rennes"),
+("FR-BRE-BRE", "FR-BRE", "Brest"),
+("FR-BRE-QIM", "FR-BRE", "Quimper"),
+("FR-BRE-LOR", "FR-BRE", "Lorient"),
+("FR-CVL-TOU", "FR-CVL", "Tours"),
+("FR-CVL-ORL", "FR-CVL", "Orléans"),
+("FR-CVL-BLO", "FR-CVL", "Blois"),
+("FR-CVL-CHT", "FR-CVL", "Chartres"),
+("FR-CVL-TOU", "FR-CVL", "Tours"),
+("FR-COR-AJA", "FR-COR", "Ajaccio"),
+("FR-GES-SXB", "FR-GES", "Strasbourg"),
+("FR-GES-MET", "FR-GES", "Metz"),
+("FR-GES-NAN", "FR-GES", "Nancy"),
+("FR-GES-EPN", "FR-GES", "Épinal"),
+("FR-GES-CHL", "FR-GES", "Châlons-en-Champagne"),
+("FR-GES-TRO", "FR-GES", "Troyes"),
+("FR-HDF-LIL", "FR-HDF", "Lille"),
+("FR-HDF-AMI", "FR-HDF", "Amiens"),
+("FR-HDF-ROU", "FR-HDF", "Rouen"),
+("FR-HDF-CAE", "FR-HDF", "Caen"),
+("FR-HDF-BET", "FR-HDF", "Le Havre"),
+("FR-HDF-SIE", "FR-HDF", "Saint-Quentin"),
+("FR-HDF-CRE", "FR-HDF", "Créteil"),
+("FR-IDF-LIL", "FR-IDF", "Lille"),
+("FR-NAQ-BOD", "FR-NAQ", "Bordeaux"),
+("FR-NAQ-MTP", "FR-NAQ", "Montpellier"),
+("FR-NAQ-TOU", "FR-NAQ", "Toulouse"),
+("FR-NAQ-PER", "FR-NAQ", "Périgueux"),
+("FR-OCC-TLS", "FR-OCC", "Toulouse"),
+("FR-OCC-MTP", "FR-OCC", "Montpellier"),
+("FR-OCC-NIM", "FR-OCC", "Nîmes"),
+("FR-OCC-PRP", "FR-OCC", "Perpignan"),
+("FR-OCC-CLR", "FR-OCC", "Clermont-Ferrand"),
+("FR-OCC-ARA", "FR-OCC", "Aurillac"),
+("FR-PDL-NTE", "FR-PDL", "Nantes"),
+("FR-PDL-ANG", "FR-PDL", "Angers"),
+("FR-PDL-LEH", "FR-PDL", "Le Mans"),
+("FR-PDL-LRS", "FR-PDL", "La Roche-sur-Yon"),
+("FR-PDL-CHT", "FR-PDL", "Cholet"),
+("FR-PDL-LEP", "FR-PDL", "Laval"),
+("FR-PAC-MRS", "FR-PAC", "Marseille"),
+("FR-PAC-NCE", "FR-PAC", "Nice"),
+("FR-PAC-TPM", "FR-PAC", "Toulon"),
+("FR-PAC-AVN", "FR-PAC", "Avignon"),
+("FR-PAC-NIM", "FR-PAC", "Nîmes"),
+("FR-PAC-AIX", "FR-PAC", "Aix-en-Provence"),
+("FR-PAC-ARS", "FR-PAC", "Arles"),
+("FR-PAC-SLM", "FR-PAC", "Salon-de-Provence"),
+("FR-GF-CAY", "FR-GF", "Cayenne"),
+("FR-GP-FDF", "FR-GP", "Fort-de-France"),
+("FR-MQ-FDF", "FR-MQ", "Fort-de-France"),
+("FR-RE-SJL", "FR-RE", "Saint-Denis"),
+("FR-YT-DZA", "FR-YT", "Dzaoudzi");
+
+-- gabon
+
+INSERT INTO countries VALUES 
+("GA", "AF", "Gabon", "Libreville");
+
+INSERT INTO states VALUES
+("GA-ES", "GA", "Estuaire"),
+("GA-NG", "GA", "Ngounié"),
+("GA-NY", "GA", "Nyanga"),
+("GA-HO", "GA", "Haut-Ogooué"),
+("GA-MO", "GA", "Moyen-Ogooué"),
+("GA-OL", "GA", "Ogooué-Lolo"),
+("GA-OO", "GA", "Ogooué-Ivindo"),
+("GA-OM", "GA", "Ogooué-Maritime"),
+("GA-NG", "GA", "Ngounié");
+
+INSERT INTO cities VALUES
+("GA-ES-LBV", "GA-ES", "Libreville"),
+("GA-ES-OWE", "GA-ES", "Owendo"),
+("GA-ES-ABE", "GA-ES", "Akanda"),
+("GA-NG-MOU", "GA-NG", "Mouila"),
+("GA-NG-TCH", "GA-NG", "Tchibanga"),
+("GA-NG-LAM", "GA-NG", "Lambarene"),
+("GA-NG-MBI", "GA-NG", "Mbigou"),
+("GA-NY-TCH", "GA-NY", "Tchibanga"),
+("GA-NY-MOD", "GA-NY", "Moungoundou"),
+("GA-NY-MAY", "GA-NY", "Mayumba"),
+("GA-HO-FBI", "GA-HO", "Franceville"),
+("GA-HO-LBI", "GA-HO", "Lastoursville"),
+("GA-HO-MOB", "GA-HO", "Mounana"),
+("GA-HO-MAK", "GA-HO", "Makokou"),
+("GA-HO-BYE", "GA-HO", "Beyounda"),
+("GA-MO-LMK", "GA-MO", "Lambaréné"),
+("GA-MO-BOU", "GA-MO", "Boumango"),
+("GA-MO-KIN", "GA-MO", "Kinguélé"),
+("GA-OL-KOU", "GA-OL", "Koulamoutou"),
+("GA-OL-LBI", "GA-OL", "Lébamba"),
+("GA-OL-BAT", "GA-OL", "Bakoumba"),
+("GA-OO-MDJ", "GA-OO", "Makokou"),
+("GA-OO-MEK", "GA-OO", "Mekambo"),
+("GA-OM-POG", "GA-OM", "Port-Gentil"),
+("GA-OM-GON", "GA-OM", "Gamba"),
+("GA-OM-MOU", "GA-OM", "Moanda"),
+("GA-OM-OMD", "GA-OM", "Omboué");
+
+-- gambia
+
+INSERT INTO countries VALUES 
+("GM", "AF", "Gambia", "Banjul");
+
+INSERT INTO states VALUES
+("GM-B", "GM", "Banjul"),
+("GM-L", "GM", "Lower River"),
+("GM-M", "GM", "Central River"),
+("GM-N", "GM", "North Bank"),
+("GM-U", "GM", "Upper River"),
+("GM-W", "GM", "Western");
+
+INSERT INTO cities VALUES
+("GM-B-BJL", "GM-B", "Banjul"),
+("GM-B-BKO", "GM-B", "Bakau"),
+("GM-B-BRI", "GM-B", "Brikama"),
+("GM-B-FAJ", "GM-B", "Fajara"),
+("GM-B-KAN", "GM-B", "Kanifing"),
+("GM-L-MKM", "GM-L", "Mansa Konko"),
+("GM-L-JLN", "GM-L", "Janjanbureh"),
+("GM-L-KRK", "GM-L", "Kaur"),
+("GM-L-PRU", "GM-L", "Pirang"),
+("GM-M-MLC", "GM-M", "Mansa Konko"),
+("GM-M-BJK", "GM-M", "Bansang"),
+("GM-N-KRN", "GM-N", "Kerewan"),
+("GM-N-LRD", "GM-N", "Lamin"),
+("GM-N-ESL", "GM-N", "Essau"),
+("GM-U-BHR", "GM-U", "Basse Santa Su"),
+("GM-U-FRR", "GM-U", "Farafenni"),
+("GM-U-GKT", "GM-U", "Georgetown"),
+("GM-W-BWK", "GM-W", "Brikama"),
+("GM-W-SKN", "GM-W", "Serekunda"),
+("GM-W-BNJ", "GM-W", "Banjulinding"),
+("GM-W-BAT", "GM-W", "Bakau"),
+("GM-W-LYE", "GM-W", "Lamin Yaa"),
+("GM-W-TUJ", "GM-W", "Tujereng");
+
+-- georgia
+
+INSERT INTO countries VALUES 
+("GE", "AS", "Georgia", "Tbilisi");
+
+INSERT INTO states VALUES
+("GE-TB", "GE", "Tbilisi"),
+("GE-AB", "GE", "Abkhazia"),
+("GE-AJ", "GE", "Ajara"),
+("GE-GU", "GE", "Guria"),
+("GE-IM", "GE", "Imereti"),
+("GE-KA", "GE", "Kakheti"),
+("GE-KK", "GE", "Kvemo Kartli"),
+("GE-MM", "GE", "Mtskheta-Mtianeti"),
+("GE-RA", "GE", "Racha-Lechkhumi and Kvemo Svaneti"),
+("GE-SJ", "GE", "Samtskhe-Javakheti"),
+("GE-SZ", "GE", "Samegrelo-Zemo Svaneti"),
+("GE-SK", "GE", "Shida Kartli");
+
+INSERT INTO cities VALUES
+("GE-TB-TBS", "GE-TB", "Tbilisi"),
+("GE-AB-SUK", "GE-AB", "Sukhumi"),
+("GE-AB-GAG", "GE-AB", "Gagra"),
+("GE-AB-PIT", "GE-AB", "Pitsunda"),
+("GE-AJ-BAT", "GE-AJ", "Batumi"),
+("GE-AJ-KOB", "GE-AJ", "Kobuleti"),
+("GE-AJ-KHA", "GE-AJ", "Khelvachauri"),
+("GE-GU-OZA", "GE-GU", "Ozurgeti"),
+("GE-GU-LAN", "GE-GU", "Lanchkhuti"),
+("GE-GU-CHO", "GE-GU", "Chokhatauri"),
+("GE-GU-POT", "GE-GU", "Poti"),
+("GE-IM-KUT", "GE-IM", "Kutaisi"),
+("GE-IM-ZES", "GE-IM", "Zestafoni"),
+("GE-IM-TSQ", "GE-IM", "Tsqaltubo"),
+("GE-IM-CHI", "GE-IM", "Chiatura"),
+("GE-KA-TLA", "GE-KA", "Telavi"),
+("GE-KA-GUR", "GE-KA", "Gurjaani"),
+("GE-KA-KVS", "GE-KA", "Kvareli"),
+("GE-KA-SAG", "GE-KA", "Sagarejo"),
+("GE-KK-RNE", "GE-KK", "Rustavi"),
+("GE-KK-Mar", "GE-KK", "Marneuli"),
+("GE-MM-MTS", "GE-MM", "Mtskheta"),
+("GE-MM-DIA", "GE-MM", "Dianeti"),
+("GE-RA-AMB", "GE-RA", "Ambrolauri"),
+("GE-RA-LCH", "GE-RA", "Lentekhi"),
+("GE-RA-ONI", "GE-RA", "Oni"),
+("GE-SJ-AKH", "GE-SJ", "Akhaltsikhe"),
+("GE-SJ-BOL", "GE-SJ", "Borjomi"),
+("GE-SJ-ASU", "GE-SJ", "Aspindza"),
+("GE-SZ-ZUG", "GE-SZ", "Zugdidi"),
+("GE-SZ-POT", "GE-SZ", "Poti"),
+("GE-SZ-SEN", "GE-SZ", "Senaki"),
+("GE-SZ-ABH", "GE-SZ", "Abasha"),
+("GE-SZ-CHI", "GE-SZ", "Chkhorotsku"),
+("GE-SZ-KHO", "GE-SZ", "Khobi"),
+("GE-SZ-JVA", "GE-SZ", "Jvari"),
+("GE-SK-GOR", "GE-SK", "Gori"),
+("GE-SK-KAS", "GE-SK", "Kaspi"),
+("GE-SK-KAR", "GE-SK", "Kareli"),
+("GE-SK-TIA", "GE-SK", "Tianeti");
+
+-- germany
+
+INSERT INTO countries VALUES 
+("DE", "EU", "Germany", "Berlin");
+
+INSERT INTO states VALUES
+("DE-BW", "DE", "Baden-Württemberg"),
+("DE-BY", "DE", "Bavaria"),
+("DE-BE", "DE", "Berlin"),
+("DE-BB", "DE", "Brandenburg"),
+("DE-HB", "DE", "Bremen"),
+("DE-HH", "DE", "Hamburg"),
+("DE-HE", "DE", "Hesse"),
+("DE-MV", "DE", "Mecklenburg-Vorpommern"),
+("DE-NI", "DE", "Lower Saxony"),
+("DE-NW", "DE", "North Rhine-Westphalia"),
+("DE-RP", "DE", "Rhineland-Palatinate"),
+("DE-SL", "DE", "Saarland"),
+("DE-SN", "DE", "Saxony"),
+("DE-ST", "DE", "Saxony-Anhalt"),
+("DE-SH", "DE", "Schleswig-Holstein"),
+("DE-TH", "DE", "Thuringia");
+
+INSERT INTO cities VALUES
+("DE-BE-BLN", "DE-BE", "Berlin"),
+("DE-BE-POT", "DE-BE", "Potsdam"),
+("DE-BW-S", "DE-BW", "Stuttgart"),
+("DE-BW-K", "DE-BW", "Karlsruhe"),
+("DE-BW-MAN", "DE-BW", "Mannheim"),
+("DE-BY-M", "DE-BY", "Munich"),
+("DE-BY-N", "DE-BY", "Nuremberg"),
+("DE-BY-A", "DE-BY", "Augsburg"),
+("DE-BY-ING", "DE-BY", "Ingolstadt"),
+("DE-HB-HB", "DE-HB", "Bremen"),
+("DE-HB-BRV", "DE-HB", "Bremerhaven"),
+("DE-HH-HH", "DE-HH", "Hamburg"),
+("DE-HE-WI", "DE-HE", "Wiesbaden"),
+("DE-HE-F", "DE-HE", "Frankfurt"),
+("DE-HE-MTK", "DE-HE", "Main-Taunus-Kreis"),
+("DE-MV-SN", "DE-MV", "Schwerin"),
+("DE-NI-H", "DE-NI", "Hanover"),
+("DE-NI-BS", "DE-NI", "Braunschweig"),
+("DE-NW-D", "DE-NW", "Düsseldorf"),
+("DE-NW-K", "DE-NW", "Cologne"),
+("DE-NW-BON", "DE-NW", "Bonn"),
+("DE-NW-DU", "DE-NW", "Duisburg"),
+("DE-RP-MZ", "DE-RP", "Mainz"),
+("DE-RP-KL", "DE-RP", "Kaiserslautern"),
+("DE-SL-SB", "DE-SL", "Saarbrücken"),
+("DE-SL-HOM", "DE-SL", "Homburg"),
+("DE-SN-D", "DE-SN", "Dresden"),
+("DE-SN-L", "DE-SN", "Leipzig"),
+("DE-SN-C", "DE-SN", "Chemnitz"),
+("DE-ST-MD", "DE-ST", "Magdeburg"),
+("DE-SH-KI", "DE-SH", "Kiel"),
+("DE-SH-LB", "DE-SH", "Lübeck"),
+("DE-TH-E", "DE-TH", "Erfurt"),
+("DE-TH-J", "DE-TH", "Jena"),
+("DE-TH-G", "DE-TH", "Gera");
+
+-- ghana
+
+INSERT INTO countries VALUES 
+("GH", "AF", "Ghana", "Accra");
+
+INSERT INTO states VALUES
+("GH-AA", "GH", "Greater Accra"),
+("GH-AH", "GH", "Ashanti"),
+("GH-BA", "GH", "Brong-Ahafo"),
+("GH-CE", "GH", "Central"),
+("GH-EP", "GH", "Eastern"),
+("GH-NP", "GH", "Northern"),
+("GH-UE", "GH", "Upper East"),
+("GH-UW", "GH", "Upper West"),
+("GH-TV", "GH", "Volta"),
+("GH-WP", "GH", "Western");
+
+INSERT INTO cities VALUES
+("GH-AA-ACC", "GH-AA", "Accra"),
+("GH-AA-TEM", "GH-AA", "Tema"),
+("GH-AA-NUN", "GH-AA", "Nungua"),
+("GH-AA-DOD", "GH-AA", "Dodowa"),
+("GH-AA-ADA", "GH-AA", "Ada Foah"),
+("GH-AH-KUM", "GH-AH", "Kumasi"),
+("GH-AH-SUH", "GH-AH", "Sunyani"),
+("GH-AH-ESS", "GH-AH", "Essumeja"),
+("GH-BA-TAM", "GH-BA", "Techiman"),
+("GH-BA-SUN", "GH-BA", "Sunyani"),
+("GH-CE-CAK", "GH-CE", "Cape Coast"),
+("GH-CE-ADA", "GH-CE", "Ada"),
+("GH-CE-MFA", "GH-CE", "Mfantsiman"),
+("GH-EP-KOF", "GH-EP", "Koforidua"),
+("GH-EP-NSW", "GH-EP", "Nsawam"),
+("GH-NP-TAM", "GH-NP", "Tamale"),
+("GH-NP-BOL", "GH-NP", "Bolga"),
+("GH-NP-DAM", "GH-NP", "Damongo"),
+("GH-UE-BOL", "GH-UE", "Bolgatanga"),
+("GH-UE-BWN", "GH-UE", "Bawku"),
+("GH-UE-NAZ", "GH-UE", "Navrongo"),
+("GH-UW-WAA", "GH-UW", "Wa"),
+("GH-UW-BOL", "GH-UW", "Bolgatanga"),
+("GH-UW-LAW", "GH-UW", "Lawra"),
+("GH-TV-HO", "GH-TV", "Ho"),
+("GH-TV-ACR", "GH-TV", "Akatsi"),
+("GH-TV-KET", "GH-TV", "Keta"),
+("GH-WP-TAR", "GH-WP", "Takoradi"),
+("GH-WP-SEK", "GH-WP", "Sekondi"),
+("GH-WP-ELL", "GH-WP", "Ellembelle");
+
+-- greece
+
+INSERT INTO countries VALUES 
+("GR", "EU", "Greece", "Athens");
+
+INSERT INTO states VALUES
+("GR-I", "GR", "Attica"),
+("GR-A", "GR", "Central Greece"),
+("GR-E", "GR", "Epirus"),
+("GR-G", "GR", "Western Greece"),
+("GR-C", "GR", "Central Macedonia"),
+("GR-K", "GR", "Crete"),
+("GR-EA", "GR", "East Macedonia and Thrace"),
+("GR-I", "GR", "Ionian Islands"),
+("GR-N", "GR", "Northern Aegean"),
+("GR-P", "GR", "Peloponnese"),
+("GR-ST", "GR", "Southern Aegean"),
+("GR-W", "GR", "Western Macedonia");
+
+INSERT INTO cities VALUES
+("GR-I-ATH", "GR-I", "Athens"),
+("GR-I-PIR", "GR-I", "Piraeus"),
+("GR-I-KIF", "GR-I", "Kifisia"),
+("GR-I-MAR", "GR-I", "Marousi"),
+("GR-I-GLY", "GR-I", "Glyfada"),
+("GR-A-LAM", "GR-A", "Lamia"),
+("GR-A-LEV", "GR-A", "Levadia"),
+("GR-A-CHL", "GR-A", "Chalkida"),
+("GR-E-IOA", "GR-E", "Ioannina"),
+("GR-E-ART", "GR-E", "Arta"),
+("GR-E-PRE", "GR-E", "Preveza"),
+("GR-G-PAT", "GR-G", "Patras"),
+("GR-G-MES", "GR-G", "Mesolongi"),
+("GR-G-AMF", "GR-G", "Amfilochia"),
+("GR-C-THS", "GR-C", "Thessaloniki"),
+("GR-C-SER", "GR-C", "Serres"),
+("GR-C-KAT", "GR-C", "Katerini"),
+("GR-K-HER", "GR-K", "Heraklion"),
+("GR-K-CHA", "GR-K", "Chania"),
+("GR-K-REY", "GR-K", "Rethymno"),
+("GR-EA-KAV", "GR-EA", "Kavala"),
+("GR-EA-XAN", "GR-EA", "Xanthi"),
+("GR-EA-DRA", "GR-EA", "Drama"),
+("GR-I-COR", "GR-I", "Corfu"),
+("GR-I-KER", "GR-I", "Kerkyra"),
+("GR-N-MYT", "GR-N", "Mytilene"),
+("GR-N-CHA", "GR-N", "Chios"),
+("GR-P-KAL", "GR-P", "Kalamata"),
+("GR-P-TRI", "GR-P", "Tripoli"),
+("GR-P-SPI", "GR-P", "Sparta"),
+("GR-ST-RHO", "GR-ST", "Rhodes"),
+("GR-ST-KOS", "GR-ST", "Kos"),
+("GR-W-KAS", "GR-W", "Kastoria"),
+("GR-W-KOZ", "GR-W", "Kozani"),
+("GR-W-FLR", "GR-W", "Florina");
+
+-- grenada
+
+INSERT INTO countries VALUES 
+("GD", "NA", "Grenada", "St. George's");
+
+INSERT INTO states VALUES
+("GD-01", "GD", "Saint Andrew"),
+("GD-02", "GD", "Saint David"),
+("GD-03", "GD", "Saint George"),
+("GD-04", "GD", "Saint John"),
+("GD-05", "GD", "Saint Mark"),
+("GD-06", "GD", "Saint Patrick");
+
+INSERT INTO cities VALUES
+("GD-01-SP", "GD-01", "Sauteurs"),
+("GD-01-GR", "GD-01", "Grenville"),
+("GD-01-VC", "GD-01", "Victoria"),
+("GD-02-LA", "GD-02", "La Sagesse"),
+("GD-02-PE", "GD-02", "Pearls"),
+("GD-02-CA", "GD-02", "Calivigny"),
+("GD-03-GC", "GD-03", "Gouyave"),
+("GD-03-VI", "GD-03", "Victoria"),
+("GD-03-WA", "GD-03", "Waltham"),
+("GD-04-GR", "GD-04", "Grenada"),
+("GD-04-DR", "GD-04", "Duquesne"),
+("GD-04-LE", "GD-04", "Levera"),
+("GD-05-GR", "GD-05", "Grenada"),
+("GD-05-PT", "GD-05", "Pearls"),
+("GD-05-BA", "GD-05", "Belmont"),
+("GD-06-SA", "GD-06", "Sauteurs"),
+("GD-06-PE", "GD-06", "Pearls"),
+("GD-06-GR", "GD-06", "Grenada");
+
+-- guatemala
+
+INSERT INTO countries VALUES 
+("GT", "NA", "Guatemala", "Guatemala City");
+
+INSERT INTO states VALUES
+("GT-AV", "GT", "Alta Verapaz"),
+("GT-BV", "GT", "Baja Verapaz"),
+("GT-CM", "GT", "Chimaltenango"),
+("GT-CQ", "GT", "Chiquimula"),
+("GT-PE", "GT", "Petén"),
+("GT-IZ", "GT", "Izabal"),
+("GT-JA", "GT", "Jalapa"),
+("GT-JU", "GT", "Jutiapa"),
+("GT-PR", "GT", "El Progreso"),
+("GT-QC", "GT", "Quiché"),
+("GT-QZ", "GT", "Quetzaltenango"),
+("GT-RE", "GT", "Retalhuleu"),
+("GT-SA", "GT", "Sacatepéquez"),
+("GT-SM", "GT", "San Marcos"),
+("GT-SO", "GT", "Sololá"),
+("GT-SR", "GT", "Santa Rosa"),
+("GT-SU", "GT", "Suchitepéquez"),
+("GT-TO", "GT", "Totonicapán"),
+("GT-ZA", "GT", "Zacapa"),
+("GT-CM", "GT", "Guatemala");
+
+INSERT INTO cities VALUES
+("GT-AV-CB", "GT-AV", "Cobán"),
+("GT-AV-CA", "GT-AV", "Cahabón"),
+("GT-AV-CHI", "GT-AV", "Chisec"),
+("GT-AV-FA", "GT-AV", "Fray Bartolomé de las Casas"),
+("GT-AV-LA", "GT-AV", "Lanquín"),
+("GT-BV-SA", "GT-BV", "Salama"),
+("GT-BV-CA", "GT-BV", "Cubulco"),
+("GT-BV-GR", "GT-BV", "Granados"),
+("GT-BV-RA", "GT-BV", "Rabinal"),
+("GT-CM-AN", "GT-CM", "Antigua Guatemala"),
+("GT-CM-CHI", "GT-CM", "Chimaltenango"),
+("GT-CM-SAN", "GT-CM", "San José Poaquil"),
+("GT-CM-TEC", "GT-CM", "Tecpán Guatemala"),
+("GT-CQ-CH", "GT-CQ", "Chiquimula"),
+("GT-CQ-EA", "GT-CQ", "Esquipulas"),
+("GT-CQ-JOC", "GT-CQ", "Jocotán"),
+("GT-PE-FLO", "GT-PE", "Flores"),
+("GT-PE-MEL", "GT-PE", "Melchor de Mencos"),
+("GT-PE-SAN", "GT-PE", "San Benito"),
+("GT-IZ-PU", "GT-IZ", "Puerto Barrios"),
+("GT-IZ-LI", "GT-IZ", "Livingston"),
+("GT-JA-JA", "GT-JA", "Jalapa"),
+("GT-JA-MON", "GT-JA", "Monjas"),
+("GT-JA-SAN", "GT-JA", "San Luis Jilotepeque"),
+("GT-JU-JU", "GT-JU", "Jutiapa"),
+("GT-JU-ASU", "GT-JU", "Asunción Mita"),
+("GT-JU-ELP", "GT-JU", "El Progreso"),
+("GT-PR-EP", "GT-PR", "El Progreso"),
+("GT-PR-GRU", "GT-PR", "Guastatoya"),
+("GT-PR-MOR", "GT-PR", "Morazán"),
+("GT-QC-CHX", "GT-QC", "Chichicastenango"),
+("GT-QC-JAC", "GT-QC", "Jacaltenango"),
+("GT-QC-QUM", "GT-QC", "Quemado"),
+("GT-QZ-QUE", "GT-QZ", "Quetzaltenango"),
+("GT-QZ-ALO", "GT-QZ", "Almolonga"),
+("GT-QZ-CAB", "GT-QZ", "Cabricán"),
+("GT-RE-RE", "GT-RE", "Retalhuleu"),
+("GT-RE-CHI", "GT-RE", "Champerico"),
+("GT-RE-ELA", "GT-RE", "El Asintal"),
+("GT-SA-AN", "GT-SA", "Antigua Guatemala"),
+("GT-SA-COM", "GT-SA", "Comalapa"),
+("GT-SA-PAN", "GT-SA", "Patzún"),
+("GT-SM-SM", "GT-SM", "San Marcos"),
+("GT-SM-MAL", "GT-SM", "Malacatán"),
+("GT-SM-SAN", "GT-SM", "San Pedro Sacatepéquez"),
+("GT-SM-SI", "GT-SM", "Sipacapa"),
+("GT-SO-SO", "GT-SO", "Sololá"),
+("GT-SO-PAN", "GT-SO", "Panajachel"),
+("GT-SO-SAN", "GT-SO", "San Antonio Palopó"),
+("GT-SR-SR", "GT-SR", "Santa Rosa de Lima"),
+("GT-SR-CUA", "GT-SR", "Cuilapa"),
+("GT-SR-ORO", "GT-SR", "Oratorio"),
+("GT-SU-MAZ", "GT-SU", "Mazatenango"),
+("GT-SU-COO", "GT-SU", "Cuyotenango"),
+("GT-SU-SAN", "GT-SU", "San Francisco Zapotitlán"),
+("GT-TO-TO", "GT-TO", "Totonicapán"),
+("GT-TO-SAN", "GT-TO", "San Cristóbal Totonicapán"),
+("GT-TO-SAN", "GT-TO", "San Andrés Xecul"),
+("GT-ZA-ZA", "GT-ZA", "Zacapa"),
+("GT-ZA-HUI", "GT-ZA", "Huité"),
+("GT-ZA-LA", "GT-ZA", "La Unión"),
+("GT-CM-GUA", "GT-CM", "Guatemala City");
+
+-- guinea
+
+INSERT INTO countries VALUES 
+("GN", "AF", "Guinea", "Conakry");
+
+INSERT INTO states VALUES
+("GN-B", "GN", "Boké"),
+("GN-C", "GN", "Conakry"),
+("GN-F", "GN", "Faranah"),
+("GN-K", "GN", "Kindia"),
+("GN-KN", "GN", "Kankan"),
+("GN-M", "GN", "Mamou"),
+("GN-N", "GN", "Nzérékoré");
+
+INSERT INTO cities VALUES
+("GN-B-BK", "GN-B", "Boké"),
+("GN-B-KB", "GN-B", "Koundara"),
+("GN-B-BF", "GN-B", "Bofa"),
+("GN-B-FA", "GN-B", "Fria"),
+("GN-C-COY", "GN-C", "Conakry"),
+("GN-C-DAL", "GN-C", "Dalaba"),
+("GN-C-COI", "GN-C", "Coyah"),
+("GN-C-DU", "GN-C", "Dubréka"),
+("GN-F-FAR", "GN-F", "Faranah"),
+("GN-F-KER", "GN-F", "Kérouané"),
+("GN-F-DA", "GN-F", "Dabola"),
+("GN-F-KOU", "GN-F", "Kouroussa"),
+("GN-K-KIN", "GN-K", "Kindia"),
+("GN-K-TLG", "GN-K", "Télimélé"),
+("GN-K-KAN", "GN-K", "Kankan"),
+("GN-K-MAN", "GN-K", "Mandiana"),
+("GN-K-KOU", "GN-K", "Kouroussa"),
+("GN-M-MAM", "GN-M", "Mamou"),
+("GN-M-DM", "GN-M", "Dalaba"),
+("GN-M-PIT", "GN-M", "Pita"),
+("GN-M-SIM", "GN-M", "Siguiri"),
+("GN-N-NZE", "GN-N", "Nzérékoré"),
+("GN-N-MAC", "GN-N", "Macenta"),
+("GN-N-KOU", "GN-N", "Koulé"),
+("GN-N-YOM", "GN-N", "Yomou"),
+("GN-N-GUE", "GN-N", "Guéckédou"),
+("GN-N-KER", "GN-N", "Kérémou"),
+("GN-N-LO", "GN-N", "Lola");
+
+-- guinea-bissau
+
+INSERT INTO countries VALUES 
+("GW", "AF", "Guinea-Bissau", "Bissau");
+
+INSERT INTO states VALUES
+("GW-BS", "GW", "Bissau"),
+("GW-BA", "GW", "Bafatá"),
+("GW-BL", "GW", "Bolama"),
+("GW-CA", "GW", "Cacheu"),
+("GW-GA", "GW", "Gabú"),
+("GW-OI", "GW", "Oio"),
+("GW-QU", "GW", "Quinara"),
+("GW-TO", "GW", "Tombali");
+
+INSERT INTO cities VALUES
+("GW-BS-BIS", "GW-BS", "Bissau"),
+("GW-BS-QUE", "GW-BS", "Quelélé"),
+("GW-BS-MAD", "GW-BS", "Madina do Boé"),
+("GW-BS-BAM", "GW-BS", "Bambadinca"),
+("GW-BS-SON", "GW-BS", "Sonecará"),
+("GW-BS-NIA", "GW-BS", "Nianera"),
+("GW-BA-BAF", "GW-BA", "Bafatá"),
+("GW-BA-GBE", "GW-BA", "Gabú"),
+("GW-BA-BIM", "GW-BA", "Biombo"),
+("GW-BA-CAC", "GW-BA", "Cachungo"),
+("GW-BA-CUM", "GW-BA", "Cumura"),
+("GW-BL-BOL", "GW-BL", "Bolama"),
+("GW-BL-BUL", "GW-BL", "Bula"),
+("GW-CA-BEC", "GW-CA", "Becora"),
+("GW-CA-BIG", "GW-CA", "Bigene"),
+("GW-CA-CAI", "GW-CA", "Caió"),
+("GW-CA-CAN", "GW-CA", "Cantanhez"),
+("GW-CA-PEL", "GW-CA", "Pelundo"),
+("GW-GA-GAB", "GW-GA", "Gabú"),
+("GW-GA-BOC", "GW-GA", "Bocanda"),
+("GW-GA-SON", "GW-GA", "Sonaco"),
+("GW-OI-BUB", "GW-OI", "Buba"),
+("GW-OI-BEL", "GW-OI", "Belchele"),
+("GW-OI-BON", "GW-OI", "Bonsuko"),
+("GW-OI-CAI", "GW-OI", "Caio"),
+("GW-QU-BOR", "GW-QU", "Bor"),
+("GW-QU-FAR", "GW-QU", "Farim"),
+("GW-QU-MAN", "GW-QU", "Mansôa"),
+("GW-TO-CAT", "GW-TO", "Catio"),
+("GW-TO-QUE", "GW-TO", "Quinhamel"),
+("GW-TO-TOB", "GW-TO", "Tombali");
+
+-- guyana
+
+INSERT INTO countries VALUES 
+("GY", "SA", "Guyana", "Georgetown");
+
+INSERT INTO states VALUES
+("GY-BA", "GY", "Barima-Waini"),
+("GY-CU", "GY", "Cuyuni-Mazaruni"),
+("GY-DE", "GY", "Demerara-Mahaica"),
+("GY-EB", "GY", "East Berbice-Corentyne"),
+("GY-ES", "GY", "Essequibo Islands-West Demerara"),
+("GY-MA", "GY", "Mahaica-Berbice"),
+("GY-PM", "GY", "Pomeroon-Supenaam"),
+("GY-PT", "GY", "Potaro-Siparuni"),
+("GY-UD", "GY", "Upper Demerara-Berbice"),
+("GY-UT", "GY", "Upper Takutu-Upper Essequibo");
+
+INSERT INTO cities VALUES
+("GY-BA-MAB", "GY-BA", "Mabaruma"),
+("GY-BA-MAT", "GY-BA", "Matthew's Ridge"),
+("GY-BA-PTN", "GY-BA", "Port Kaituma"),
+("GY-CU-AN", "GY-CU", "Anna Regina"),
+("GY-CU-BAR", "GY-CU", "Bartica"),
+("GY-CU-ITA", "GY-CU", "Ituni"),
+("GY-CU-KUR", "GY-CU", "Kuru Kururu"),
+("GY-DE-GEO", "GY-DE", "Georgetown"),
+("GY-DE-LIN", "GY-DE", "Linden"),
+("GY-DE-MAH", "GY-DE", "Mahaica"),
+("GY-EB-COR", "GY-EB", "Corentyne"),
+("GY-EB-NEW", "GY-EB", "New Amsterdam"),
+("GY-EB-ROS", "GY-EB", "Rose Hall"),
+("GY-ES-AN", "GY-ES", "Anna Regina"),
+("GY-ES-ARA", "GY-ES", "Anna Regina"),
+("GY-ES-LENA", "GY-ES", "Lethem"),
+("GY-MA-AGI", "GY-MA", "Aishalton"),
+("GY-MA-MAB", "GY-MA", "Mabaruma"),
+("GY-MA-MORA", "GY-MA", "Morawhanna"),
+("GY-PM-AN", "GY-PM", "Anna Regina"),
+("GY-PM-CHA", "GY-PM", "Charity"),
+("GY-PM-LENA", "GY-PM", "Lethem"),
+("GY-PT-AN", "GY-PT", "Anna Regina"),
+("GY-PT-IT", "GY-PT", "Ituni"),
+("GY-UD-AN", "GY-UD", "Anna Regina"),
+("GY-UD-LIN", "GY-UD", "Linden"),
+("GY-UD-MAC", "GY-UD", "Mackenzie"),
+("GY-UD-WIS", "GY-UD", "Wismar"),
+("GY-UT-AN", "GY-UT", "Anna Regina"),
+("GY-UT-LEC", "GY-UT", "Lethem"),
+("GY-UT-STA", "GY-UT", "St. Ignatius"),
+("GY-UT-KAR", "GY-UT", "Karasabai"),
+("GY-UT-ARI", "GY-UT", "Arima");
