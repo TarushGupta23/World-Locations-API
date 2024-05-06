@@ -155,7 +155,7 @@ app.post("/location", async (req, res) => {
     }
 
     if (locationId == null) {
-        res.status(500).json({error: 'location not found'})
+        res.status(200).json({error: 'location not found'})
     } else {
         res.status(200).json({ id: locationId, type: locationType });
     }
