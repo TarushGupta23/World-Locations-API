@@ -128,15 +128,15 @@ app.get("/contains/:char", async (req, res) => {
     res.status(200).json(results);
 })
 
-// POST /location - validate a location
-// body: { "location": "Continent Name" } or { "location": "City Name" }
-app.post("/location", async (req, res) => {
-    const location = req.body.location;
+// POST /location/:loc - validate a location
+// search is not case sencitive
+app.post("/location/:loc", async (req, res) => {
+    const location = req.params.loc.toLowerCase();
 
-    const result1 = await db.query(`select * from continents where name = '${location}'`);
-    const result2 = await db.query(`select * from countries where name = '${location}'`);
-    const result3 = await db.query(`select * from states where name = '${location}'`);
-    const result4 = await db.query(`select * from cities where name = '${location}'`);
+    const result1 = await db.query(`select * from continents where LOWER(name) = '${location}'`);
+    const result2 = await db.query(`select * from countries where LOWER(name) = '${location}'`);
+    const result3 = await db.query(`select * from states where LOWER(name) = '${location}'`);
+    const result4 = await db.query(`select * from cities where LOWER(name) = '${location}'`);
 
     let locationId =  null;
     let locationType = null;
