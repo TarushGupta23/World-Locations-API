@@ -171,16 +171,9 @@ The database is now set up with initial data.
 - **Description**: Get all locations which contains given character sequence. replace `:char` with character sequence, use **_** to simply get list of all locations' name
 
 ### Validate Location <a name="postlocation"></a>
-- **Endpoint**: `/location`
+- **Endpoint**: `/location/:loc`
 - **Method**: `POST`
 - **Description**: Validate a location by providing the location name in the request body. Returns the location ID and type (continent, country, state, or city).
-
-   - **Request Body**:
-     ```json
-     {
-       "location": "India"
-     }
-     ```
 
    - **Example Response**:
      ```json
