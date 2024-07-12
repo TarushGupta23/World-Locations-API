@@ -6,20 +6,62 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3080;
 
-const pg_username = "postgres";
-const pg_password = process.env.PG_PASSWORD; /* REPLACE WITH YOUR PG-ADMIN PASSWORD, eg: password: "testPassword" */
-const db_name = "WorldData";
-const db_port = "5432"; /* REPLACE WITH YOUR PG-ADMIN PORT (default: 5432) */
+// import pg from 'pg';
+
+// const { Pool } = pg;
+
+// const pool = new Pool({
+//   connectionString: process.env.POSTGRES_URL,
+// })
+//  ---------------------------------------- 
+// const pg_username = "postgres";
+// const pg_password = process.env.PG_PASSWORD; /* REPLACE WITH YOUR PG-ADMIN PASSWORD, eg: password: "testPassword" */
+// const db_name = "WorldData";
+// const db_port = "5432"; /* REPLACE WITH YOUR PG-ADMIN PORT (default: 5432) */
+
+// const db = new pg.Client({
+//     user: pg_username,
+//     host: "localhost",
+//     database: db_name,
+//     password: pg_password,
+//     port: db_port
+// })
+// db.connect()
+
+// ----------------------------------------
+const pg_username = process.env.POSTGRES_USER;
+const pg_password = process.env.POSTGRES_PASSWORD;
+const db_name = process.env.POSTGRES_DATABASE;
+const db_host = process.env.POSTGRES_HOST;
+const db_port = 5432;
 
 const db = new pg.Client({
     user: pg_username,
-    host: "localhost",
+    host: db_host,
     database: db_name,
     password: pg_password,
-    port: db_port
-})
-db.connect()
-
+    port: db_port,
+    ssl: { rejectUnauthorized: false } // To handle the SSL mode requirement
+});
+db.connect(err => {
+    if (err) {
+        console.error('Connection error', err.stack);
+    } else {
+        console.log('Connected to the database');
+        
+        // Run a simple query to test the connection
+        db.query('SELECT NOW()', (err, res) => {
+            if (err) {
+                console.error('Query error', err.stack);
+            } else {
+                console.log('Query result:', res.rows);
+            }
+            
+            // Close the connection after the test
+            db.end();
+        });
+    }
+});
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // get/all - list of all locations
