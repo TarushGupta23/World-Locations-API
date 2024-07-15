@@ -1,71 +1,22 @@
-import 'dotenv/config'
-import pg from "pg";
+import 'dotenv/config';
 import express from "express";
 import bodyParser from "body-parser";
+import pool from "./pool.js"; // Import the connection pool
 
 const app = express();
 const port = 3080;
 
-// import pg from 'pg';
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// const { Pool } = pg;
-
-// const pool = new Pool({
-//   connectionString: process.env.POSTGRES_URL,
-// })
-//  ---------------------------------------- 
-// const pg_username = "postgres";
-// const pg_password = process.env.PG_PASSWORD; /* REPLACE WITH YOUR PG-ADMIN PASSWORD, eg: password: "testPassword" */
-// const db_name = "WorldData";
-// const db_port = "5432"; /* REPLACE WITH YOUR PG-ADMIN PORT (default: 5432) */
-
-// const db = new pg.Client({
-//     user: pg_username,
-//     host: "localhost",
-//     database: db_name,
-//     password: pg_password,
-//     port: db_port
-// })
-// db.connect()
-
-// ----------------------------------------
-const pg_username = process.env.POSTGRES_USER;
-const pg_password = process.env.POSTGRES_PASSWORD;
-const db_name = process.env.POSTGRES_DATABASE;
-const db_host = process.env.POSTGRES_HOST;
-const db_port = 5432;
-
-const db = new pg.Client({
-    user: pg_username,
-    host: db_host,
-    database: db_name,
-    password: pg_password,
-    port: db_port,
-    ssl: { rejectUnauthorized: false } // To handle the SSL mode requirement
+// Middleware to handle database connection
+app.use(async (req, res, next) => {
+  req.db = pool;
+  next();
 });
-db.connect(err => {
-    if (err) {
-        console.error('Connection error', err.stack);
-    } else {
-        console.log('Connected to the database');
-        
-        // Run a simple query to test the connection
-        db.query('SELECT NOW()', (err, res) => {
-            if (err) {
-                console.error('Query error', err.stack);
-            } else {
-                console.log('Query result:', res.rows);
-            }
-            
-            // Close the connection after the test
-            db.end();
-        });
-    }
-});
-app.use(bodyParser.urlencoded({ extended: true }))
 
 // get/all - list of all locations
 app.get("/all", async (req, res) => {
+    const { db } = req;
     let allContinents = [];
     const result = await db.query("Select * from continents")
     for (let i = 0; i < result.rows.length; i++) {
@@ -96,12 +47,14 @@ app.get("/all", async (req, res) => {
 
 // GET /continents - list of all continents
 app.get('/continents', async (req,res)=>{ 
+    const { db } = req;
     const result = await db.query("Select * from continents");
     res.status(200).json(result.rows);
 })
 
 // GET /continent/{continent_code}/countries - all countries on that continent
 app.get("/continent/:id/countries", async (req, res)=> {
+    const { db } = req;
     const id = req.params.id;
     const query = `select * from countries where continent_code = '${id}'`;
     const result = await db.query(query);
@@ -110,6 +63,7 @@ app.get("/continent/:id/countries", async (req, res)=> {
 
 // GET /country/{country_code} - detail of country by code
 app.get('/country/:id', async (req, res) =>{
+    const { db } = req;
     const id = req.params.id;
     const result = await db.query(`select * from countries where country_code = '${id}'`);
     res.status(200).json(result.rows[0]);
@@ -117,6 +71,7 @@ app.get('/country/:id', async (req, res) =>{
 
 // GET /country/{country_code}/capital - get capital of given country
 app.get("/country/:id/capital", async (req, res) => {
+    const { db } = req;
     const id = req.params.id;
     const result = await db.query(`select * from countries where country_code = '${id}'`);
     res.status(200).json({capital: result.rows[0]["capital"]})
@@ -124,6 +79,7 @@ app.get("/country/:id/capital", async (req, res) => {
 
 // GET /countries/{country_code}/states - states inside that country
 app.get("/country/:id/states", async (req, res)=> {
+    const { db } = req;
     const id = req.params.id;
     const result = await db.query(`select * from states where country_code = '${id}'`);
     res.status(200).json(result.rows);
@@ -131,6 +87,7 @@ app.get("/country/:id/states", async (req, res)=> {
 
 // GET /state/{state_id}/cities
 app.get("/state/:id/cities", async (req, res)=> {
+    const { db } = req;
     const id = req.params.id;
     const result = await db.query(`select * from cities where state_id = '${id}'`);
     res.status(200).json(result.rows);
@@ -138,6 +95,7 @@ app.get("/state/:id/cities", async (req, res)=> {
 
 // Get all locations which starts with given character sequence
 app.get("/starts-with/:char", async (req, res) => {
+    const { db } = req;
     const word = req.params.char;
     const prefix = word.charAt(0).toUpperCase() + word.slice(1);
     const result1 = await db.query(`select * from continents where name like '${prefix}%'`);
@@ -150,6 +108,7 @@ app.get("/starts-with/:char", async (req, res) => {
 
 // Get all locations which ends with given character sequence
 app.get("/ends-with/:char", async (req, res) => {
+    const { db } = req;
     const suffix = req.params.char;
     const result1 = await db.query(`select * from continents where name like '%${suffix}'`);
     const result2 = await db.query(`select * from countries where name like '%${suffix}'`);
@@ -161,6 +120,7 @@ app.get("/ends-with/:char", async (req, res) => {
 
 // Get all locations which contains given character sequence
 app.get("/contains/:char", async (req, res) => {
+    const { db } = req;
     const infix = req.params.char;
     const result1 = await db.query(`select * from continents where name like '%${infix}%'`);
     const result2 = await db.query(`select * from countries where name like '%${infix}%'`);
@@ -173,6 +133,7 @@ app.get("/contains/:char", async (req, res) => {
 // POST /location/:loc - validate a location
 // search is not case sencitive
 app.post("/location/:loc", async (req, res) => {
+    const { db } = req;
     const location = req.params.loc.toLowerCase();
 
     const result1 = await db.query(`select * from continents where LOWER(name) = '${location}'`);
@@ -204,4 +165,6 @@ app.post("/location/:loc", async (req, res) => {
 })
 
 
-app.listen(port, () => { console.log(`server running at port: ${port}`) })
+app.listen(port, () => {
+  console.log(`server running at port: ${port}`);
+});
