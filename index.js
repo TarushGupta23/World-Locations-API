@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from "express";
 import bodyParser from "body-parser";
 import pool from "./pool.js"; // Import the connection pool
+// import path from 'path'
 
 const app = express();
 const port = 3080;
@@ -162,6 +163,10 @@ app.post("/location/:loc", async (req, res) => {
     } else {
         res.status(200).json({ id: locationId, type: locationType });
     }
+})
+
+app.get('/', (req, res) => {
+    res.send('API repo at: github.com/TarushGupta23/World-Locations-API');
 })
 
 

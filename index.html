@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World-Locations-API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+        }
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>World-Locations-API</h1>
+        <p>Welcome to the World-Locations-API! This API provides information about continents, countries, states, and cities around the world. It is built using Node.js, Express, and PostgreSQL.</p>
+
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#setting-up-the-database">Setting Up the Database</a>
+                <ul>
+                    <li><a href="#creating-the-database">Creating the Database</a></li>
+                    <li><a href="#executing-datasql">Executing `data.sql`</a></li>
+                </ul>
+            </li>
+            <li><a href="#endpoints">Endpoints</a>
+                <ul>
+                    <li><a href="#getall">Get All Locations</a></li>
+                    <li><a href="#getcontinents">Get Continents</a></li>
+                    <li><a href="#getcontinentidcountries">Get Countries by Continent</a></li>
+                    <li><a href="#getcountryid">Get Country by Code</a></li>
+                    <li><a href="#getcountrycapital">Get Country Capital</a></li>
+                    <li><a href="#getcountryidstates">Get States by Country</a></li>
+                    <li><a href="#getstateidcities">Get Cities by State</a></li>
+                    <li><a href="#startswith">Get Locations starting with</a></li>
+                    <li><a href="#endswith">Get Locations ending with</a></li>
+                    <li><a href="#contains">Get Locations containing</a></li>
+                    <li><a href="#postlocation">Validate Location</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2 id="getting-started">Getting Started</h2>
+        <p>Follow these instructions to set up and run the WorldData API on your local machine.</p>
+        <ol>
+            <li>Clone the repository:
+                <pre><code>git clone https://github.com/TarushGupta23/World-Locations-API
+cd World-Locations-API</code></pre>
+            </li>
+            <li>Install dependencies:
+                <pre><code>npm install</code></pre>
+            </li>
+            <li>Run the API:
+                <pre><code>node index.js</code></pre>
+            </li>
+        </ol>
+        <p>The API will be running at <code>http://localhost:3080</code>. You can now make requests to the various endpoints.</p>
+
+        <h2 id="setting-up-the-database">Setting Up the Database</h2>
+        <p>Follow these steps to set up the PostgreSQL database for the WorldData API.</p>
+
+        <h3 id="creating-the-database">Creating the Database</h3>
+        <ol>
+            <li>Open pgAdmin and connect to your PostgreSQL server.</li>
+            <li>Create a new database named <code>WorldData</code>.</li>
+            <li>Update the <code>index.js</code> file with your PG-Admin password.</li>
+        </ol>
+
+        <h3 id="executing-datasql">Executing `data.sql`</h3>
+        <p>The <code>data.sql</code> file contains SQL commands to populate the database with initial data.</p>
+        <ol>
+            <li>In pgAdmin, open a query tool for the <code>WorldData</code> database.</li>
+            <li>Copy the contents of the <code>data.sql</code> file and paste them into the query tool.</li>
+            <li>Execute the script to create tables and insert initial data.</li>
+        </ol>
+        <p><strong>Note:</strong> Ensure that the <code>pg_password</code> in the <code>index.js</code> file matches your PG-Admin password.</p>
+        <p>The database is now set up with initial data.</p>
+
+        <h2 id="endpoints">Endpoints</h2>
+
+        <h3 id="getall">Get All Locations</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/all</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get a list of all locations, including continents, countries, states, and cities.
+                <pre><code>[
+    {
+        "continent_code": "AS",
+        "name": "Asia",
+        "countries": [
+            {
+                "country_code": "IN",
+                "continent_code": "AS",
+                "name": "India",
+                "capital": "New Delhi",
+                "states": [
+                    {
+                        "state_id": "UP",
+                        "country_code": "IN",
+                        "name": "Uttar Pradesh",
+                        "cities": [
+                            {
+                                "city_id": "LUK",
+                                "state_id": "UP",
+                                "name": "Lucknow"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "continent_code": "EU",
+        "name": "Europe",
+        "countries": [
+            {
+                "country_code": "FR",
+                "continent_code": "EU",
+                "name": "France",
+                "capital": "Paris",
+                "states": [
+                    {
+                        "state_id": "IDF",
+                        "country_code": "FR",
+                        "name": "Île-de-France",
+                        "cities": [
+                            {
+                                "city_id": "PAR",
+                                "state_id": "IDF",
+                                "name": "Paris"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "continent_code": "NA",
+        "name": "North America",
+        "countries": [
+            {
+                "country_code": "US",
+                "continent_code": "NA",
+                "name": "United States",
+                "capital": "Washington, D.C.",
+                "states": [
+                    {
+                        "state_id": "CA",
+                        "country_code": "US",
+                        "name": "California",
+                        "cities": [
+                            {
+                                "city_id": "SFO",
+                                "state_id": "CA",
+                                "name": "San Francisco"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "continent_code": "SA",
+        "name": "South America",
+        "countries": [
+            {
+                "country_code": "BR",
+                "continent_code": "SA",
+                "name": "Brazil",
+                "capital": "Brasília",
+                "states": [
+                    {
+                        "state_id": "SP",
+                        "country_code": "BR",
+                        "name": "São Paulo",
+                        "cities": [
+                            {
+                                "city_id": "SAO",
+                                "state_id": "SP",
+                                "name": "São Paulo"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]</code></pre>
+            </li>
+        </ul>
+
+        <h3 id="getcontinents">Get Continents</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/continents</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get a list of all continents.
+                <pre><code>[
+    {
+        "continent_code": "AS",
+        "name": "Asia"
+    },
+    {
+        "continent_code": "EU",
+        "name": "Europe"
+    },
+    {
+        "continent_code": "NA",
+        "name": "North America"
+    },
+    {
+        "continent_code": "SA",
+        "name": "South America"
+    }
+]</code></pre>
+            </li>
+        </ul>
+
+        <h3 id="getcontinentidcountries">Get Countries by Continent</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/continent/:id/countries</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get all countries on a specific continent. Replace <code>:id</code> with the continent code.
+                <pre><code>[
+    {
+        "country_code": "IN",
+        "continent_code": "AS",
+        "name": "India",
+        "capital": "New Delhi"
+    }
+]</code></pre>
+            </li>
+        </ul>
+
+        <h3 id="getcountryid">Get Country by Code</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/country/:id</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get details of a country by its country code. Replace <code>:id</code> with the country code.
+                <pre><code>{
+    "country_code": "IN",
+    "continent_code": "AS",
+    "name": "India",
+    "capital": "New Delhi"
+}</code></pre>
+            </li>
+        </ul>
+
+        <h3 id="getcountrycapital">Get Capital of a Country</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/country/:id/capital</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get capital city of a country by its country code. Replace <code>:id</code> with country code
+                <pre><code>{
+    "capital": "New Delhi"
+}</code></pre>
+            </li>
+        </ul>
+
+        <h3 id="getcountryidstates">Get States by Country</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/country/:id/states</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get states inside a specific country. Replace <code>:id</code> with the country code.
+                <pre><code>[
+    {
+        "state_id": "UP",
+        "country_code": "IN",
+        "name": "Uttar Pradesh"
+    }
+]</code></pre>
+            </li>
+        </ul>
+
+        <h3 id="getstateidcities">Get Cities by State</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/state/:id/cities</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get cities inside a specific state. Replace <code>:id</code> with the state ID.
+                <pre><code>[
+    {
+        "city_id": "LUK",
+        "state_id": "UP",
+        "name": "Lucknow"
+    }
+]</code></pre>
+            </li>
+        </ul>
+
+        <h3 id="startswith">Get Locations Starting with</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/starts-with/:char</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get all locations which starts with given character sequence. replace <code>:char</code> with character sequence, use <strong>_</strong> to simply get list of all locations' name
+            </li>
+        </ul>
+
+        <h3 id="endswith">Get Locations Ending with</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/ends-with/:char</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get all locations which ends with given character sequence. replace <code>:char</code> with character sequence, use <strong>_</strong> to simply get list of all locations' name
+            </li>
+        </ul>
+
+        <h3 id="contains">Get Locations Containing</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/contains/:char</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Description:</strong> Get all locations which contains given character sequence. replace <code>:char</code> with character sequence, use <strong>_</strong> to simply get list of all locations' name
+            </li>
+        </ul>
+
+        <h3 id="postlocation">Validate Location</h3>
+        <ul>
+            <li><strong>Endpoint:</strong> <code>/location/:loc</code></li>
+            <li><strong>Method:</strong> <code>POST</code></li>
+            <li><strong>Description:</strong> Validate a location by providing the location name in the request body. Returns the location ID and type (continent, country, state, or city).
+                <pre><code>{
+    "id": "IN",
+    "type": "country"
+}</code></pre>
+            </li>
+        </ul>
+
+        <p>Feel free to explore and integrate the WorldData API into your applications! If you have any questions or issues, please open an <a href="https://github.com/TarushGupta23/World-Locations-API/issues">issue</a>.</p>
+    </div>
+</body>
+</html>
